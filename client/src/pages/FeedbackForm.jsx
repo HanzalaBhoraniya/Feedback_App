@@ -17,6 +17,7 @@ function FeedbackForm() {
   // NEW: Error and Loading Armor
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isSubmittingFeedback, setIsSubmittingFeedback] = useState(false);
 
   useEffect(() => {
     async function fetchBusinessData() {
@@ -78,13 +79,18 @@ function FeedbackForm() {
         : { business_id: id, starRating, feedbackPrompt, isAnonymous: true };
 
     let jsonData = JSON.stringify(data);
-    let result = await fetch(`${API_URL}/api/feedback/${id}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: jsonData,
-    });
-    if (result.ok) {
-      console.log(`Data sent successfully.`);
+    setIsSubmittingFeedback(true);
+    try {
+      let result = await fetch(`${API_URL}/api/feedback/${id}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: jsonData,
+      });
+      if (result.ok) {
+        console.log(`Data sent successfully.`);
+      }
+    } finally {
+      setIsSubmittingFeedback(false);
     }
   }
   // validating rating.
@@ -231,12 +237,17 @@ function FeedbackForm() {
             id="submitBtn"
             onClick={submitFeedback}
             style={{
-              opacity: isFormValid ? 1 : 0.5,
-              cursor: isFormValid ? "pointer" : "not-allowed",
+              opacity: isFormValid && !isSubmittingFeedback ? 1 : 0.5,
+              cursor:
+                isFormValid && !isSubmittingFeedback
+                  ? "pointer"
+                  : "not-allowed",
             }}
-            disabled={!isFormValid}
+            disabled={!isFormValid || isSubmittingFeedback}
           >
-            SUBMIT FEEDBACK
+            {isSubmittingFeedback
+              ? "Submitting Feedback..."
+              : "SUBMIT FEEDBACK"}
           </button>
         </div>
       </div>

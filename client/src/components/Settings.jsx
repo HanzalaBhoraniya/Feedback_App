@@ -13,6 +13,7 @@ function Settings() {
   const [logoError, setLogoError] = useState("");
   const [originalName, setOriginalName] = useState("");
   const [originalLogoUrl, setOriginalLogoUrl] = useState("");
+  const [isSavingChanges, setIsSavingChanges] = useState(false);
   const { nameLogo } = useOutletContext();
   useEffect(() => {
     if (nameLogo && nameLogo.businessName && nameLogo.logo_url) {
@@ -90,6 +91,7 @@ function Settings() {
     if (hasChanges) {
       const formData = new FormData(e.currentTarget);
       const token = localStorage.getItem("feedback_token");
+      setIsSavingChanges(true);
       try {
         const result = await fetch(`${API_URL}/api/businesses`, {
           method: "PUT",
@@ -112,6 +114,8 @@ function Settings() {
       } catch (error) {
         setError("Error while submitting the form.");
         console.log(`Error while submitting the form: ${error}`);
+      } finally {
+        setIsSavingChanges(false);
       }
     }
   }
@@ -190,13 +194,14 @@ function Settings() {
             <button
               type="submit"
               className="save-btn"
-              disabled={!isFormValid}
+              disabled={!isFormValid || isSavingChanges}
               style={{
-                cursor: isFormValid ? "pointer" : "not-allowed",
-                opacity: isFormValid ? 1 : 0.5,
+                cursor:
+                  isFormValid && !isSavingChanges ? "pointer" : "not-allowed",
+                opacity: isFormValid && !isSavingChanges ? 1 : 0.5,
               }}
             >
-              Save Changes
+              {isSavingChanges ? "Saving Changes..." : "Save Changes"}
             </button>
           </form>
         </div>

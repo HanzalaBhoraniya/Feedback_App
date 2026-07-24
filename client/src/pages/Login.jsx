@@ -8,6 +8,8 @@ function Login() {
   const [email, setEmail] = useState("");
   const [OTP, setOTP] = useState("");
   const [isCodeSent, setIsCodeSent] = useState(false);
+  const [isSendingOTP, setIsSendingOTP] = useState(false);
+  const [isVerifyingOTP, setIsVerifyingOTP] = useState(false);
   // selecting elements replacement of document.querySelector
   const emailInputRef = useRef(null);
   const codeInputRef = useRef(null);
@@ -58,55 +60,65 @@ function Login() {
     }
   }
   async function getOTP(event) {
-    let result = await fetch(`${API_URL}/api/otp/send`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-      }),
-    });
-    if (result.ok) {
-      setIsCodeSent(true);
-    } else {
-      console.log(`Failed to send email.`);
+    setIsSendingOTP(true);
+    try {
+      let result = await fetch(`${API_URL}/api/otp/send`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+        }),
+      });
+      if (result.ok) {
+        setIsCodeSent(true);
+      } else {
+        console.log(`Failed to send email.`);
+      }
+    } finally {
+      setIsSendingOTP(false);
     }
   }
   const { updateStatus } = useContext(authContext);
   async function verify(event) {
-    let result = await fetch(`${API_URL}/api/otp/verify`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        code: OTP,
-      }),
-    });
-    if (result.ok) {
-      const data = await result.json();
-      localStorage.setItem("feedback_token", data.token);
-
-      // Check if this user already has a business profile
-      const profileCheck = await fetch(`${API_URL}/api/businesses`, {
-        headers: { Authorization: `Bearer ${data.token}` },
+    setIsVerifyingOTP(true);
+    try {
+      let result = await fetch(`${API_URL}/api/otp/verify`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          code: OTP,
+        }),
       });
+      if (result.ok) {
+        const data = await result.json();
+        localStorage.setItem("feedback_token", data.token);
 
-      if (profileCheck.ok) {
-        // Returning User -> Send to Dashboard
-        updateStatus("dashboard");
-        navigate("/dashboard");
+        // Check if this user already has a business profile
+        const profileCheck = await fetch(`${API_URL}/api/businesses`, {
+          headers: { Authorization: `Bearer ${data.token}` },
+        });
+
+        if (profileCheck.ok) {
+          // Returning User -> Send to Dashboard
+          updateStatus("dashboard");
+          navigate("/dashboard");
+        } else {
+          // Brand New User -> Send to Setup Form
+          updateStatus("setUpForm");
+          navigate("/setUpForm");
+        }
+        return;
       } else {
-        // Brand New User -> Send to Setup Form
-        updateStatus("setUpForm");
-        navigate("/setUpForm");
+        const errorData = await result.json();
+        console.log(`Login Failed: ${errorData.message}`);
       }
-      return;
-    } else {
-      const errorData = await result.json();
-      console.log(`Login Failed: ${errorData.message}`);
+    } finally {
+      setIsVerifyingOTP(false);
     }
   }
   return (
@@ -134,14 +146,14 @@ function Login() {
             id="getOTPBtn"
             onClick={getOTP}
             className="sameBtn"
-            disabled={!isValidEmail}
+            disabled={!isValidEmail || isSendingOTP}
             style={{
-              cursor: isValidEmail ? "pointer" : "not-allowed",
-              opacity: isValidEmail ? 1 : 0.5,
+              cursor: isValidEmail && !isSendingOTP ? "pointer" : "not-allowed",
+              opacity: isValidEmail && !isSendingOTP ? 1 : 0.5,
             }}
             ref={getOtpRef}
           >
-            Send OTP
+            {isSendingOTP ? "Sending OTP..." : "Send OTP"}
           </button>
         </div>
         <div
@@ -166,14 +178,14 @@ function Login() {
             id="verifyBtn"
             className="sameBtn"
             onClick={verify}
-            disabled={!isOTPvalid}
+            disabled={!isOTPvalid || isVerifyingOTP}
             style={{
-              cursor: isOTPvalid ? "pointer" : "not-allowed",
-              opacity: isOTPvalid ? 1 : 0.5,
+              cursor: isOTPvalid && !isVerifyingOTP ? "pointer" : "not-allowed",
+              opacity: isOTPvalid && !isVerifyingOTP ? 1 : 0.5,
             }}
             ref={verifyBtnRef}
           >
-            Verify
+            {isVerifyingOTP ? "Verifying OTP..." : "Verify"}
           </button>
         </div>
       </div>

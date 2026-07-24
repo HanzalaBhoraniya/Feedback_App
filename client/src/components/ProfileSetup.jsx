@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import rightArrowIcon from "../assets/rightArrow.svg";
 import "./ProfileSetup.css";
 import { useNavigate } from "react-router-dom";
 import API_URL from "../utils/api";
+import { authContext } from "../context/AuthContext";
 
 function ProfileSetup() {
   const MAX_BUSINESS_NAME_LENGTH = 50;
@@ -11,7 +12,9 @@ function ProfileSetup() {
   const [logoFile, setLogoFile] = useState(null);
   const [businessName, setBusinessName] = useState("");
   const [error, setError] = useState("");
+  const [isSavingProfile, setIsSavingProfile] = useState(false);
   const navigate = useNavigate();
+  const { updateStatus } = useContext(authContext);
   useEffect(() => {
     async function compulsion() {
       const token = localStorage.getItem("feedback_token");
@@ -124,6 +127,7 @@ function ProfileSetup() {
     }
     const formData = new FormData(event.target);
     const token = localStorage.getItem("feedback_token");
+    setIsSavingProfile(true);
     try {
       const result = await fetch(`${API_URL}/api/businesses`, {
         method: "POST",
@@ -134,6 +138,7 @@ function ProfileSetup() {
       });
       if (result.ok) {
         console.log(`Data saved succesfully.`);
+        updateStatus("dashboard");
       } else {
         const errorData = await result.json();
         setError(errorData.message || "Failed to save data.");
@@ -142,6 +147,8 @@ function ProfileSetup() {
     } catch (error) {
       setError("Error while submitting the form.");
       console.log(`Error while submitting the form: ${error}`);
+    } finally {
+      setIsSavingProfile(false);
     }
   }
   return (
@@ -233,13 +240,16 @@ function ProfileSetup() {
           ) : null}
           <button
             id="saveBtn"
-            disabled={!isFormValid}
+            disabled={!isFormValid || isSavingProfile}
             style={{
-              cursor: isFormValid ? "pointer" : "not-allowed",
-              opacity: isFormValid ? 1 : 0.5,
+              cursor:
+                isFormValid && !isSavingProfile ? "pointer" : "not-allowed",
+              opacity: isFormValid && !isSavingProfile ? 1 : 0.5,
             }}
           >
-            <span> Save Profile</span>
+            <span>
+              {isSavingProfile ? "Saving Profile..." : "Save Profile"}
+            </span>
             <img id="rightArrowIcon" src={rightArrowIcon} alt="rightArrow" />
           </button>
         </form>
