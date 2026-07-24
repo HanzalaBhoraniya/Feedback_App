@@ -1,0 +1,170 @@
+/* --- Main Layout Wrapper --- */
+#feedbackFormWrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+  box-sizing: border-box;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 550px; /* This locks the UI from getting too wide on PC */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Hero & Logo Section --- */
+#heroSection {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#businessLogo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+#businessLogo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #863bff;
+  box-shadow: 0 0 15px rgba(134, 59, 255, 0.3);
+}
+
+#heroSection h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* --- Form Containers --- */
+.subForm {
+  background-color: #141417;
+  border: 1px solid #27272a;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+#customerFeedback {
+  color: #a1a1aa;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.subHeading {
+  margin: 0 0 10px 0;
+  font-weight: 500;
+  font-size: 18px;
+  display: block;
+}
+
+.wrapperBox {
+  margin-bottom: 24px;
+}
+
+/* --- Star Rating System --- */
+#stars {
+  border: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 10px; /* Even spacing between stars */
+}
+
+.starInput {
+  display: none;
+}
+
+.starLable {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* Kills the blue flash */
+  -webkit-user-select: none; /* Safari text selection prevention */
+  user-select: none; /* Global text selection prevention */
+}
+
+.star-svg {
+  fill: transparent;
+  stroke: #27272a;
+  stroke-width: 1.5px;
+  height: 45px;
+  width: 45px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Star Hover & Active Logic */
+.starLable:hover .star-svg,
+.starLable:hover ~ .starLable .star-svg,
+.starInput:checked ~ .starLable .star-svg {
+  fill: #863bff;
+  stroke: #863bff;
+}
+
+/* --- Inputs & Textareas --- */
+#feedbackPrompt {
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #0a0a0b;
+  border: 1px solid #27272a;
+  color: #fafafa;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+  resize: none;
+  min-height: 120px;
+}
+
+.optionalInputsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.optionalInput {
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #0a0a0b;
+  border: 1px solid #27272a;
+  color: #fafafa;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+  height: 50px;
+}
+
+#feedbackPrompt:focus,
+.optionalInput:focus {
+  border-color: #863bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(134, 59, 255, 0.15);
+}
+
+/* --- Submit Button --- */
+#submitBtn {
+  width: 100%;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 0.5rem;
+  margin-top: 5px;
+}

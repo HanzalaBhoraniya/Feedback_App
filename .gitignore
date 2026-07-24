@@ -1,0 +1,14 @@
+# --- Node/Express Junk ---
+node_modules/
+.env
+
+# --- macOS Junk ---
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- Windows Junk ---
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db

@@ -1,0 +1,3951 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+client/
+  public/
+    favicon.svg
+    icons.svg
+  src/
+    assets/
+      download.svg
+      hero.png
+      layout-dashboard.svg
+      link.svg
+      messages-square.svg
+      qr-code.svg
+      react.svg
+      rightArrow.svg
+      settings.svg
+      thumbs-down.svg
+      thumbs-up.svg
+      vite.svg
+      x.svg
+    components/
+      AnalyticsDashboard.css
+      AnalyticsDashboard.jsx
+      FeedbackFeed.css
+      FeedbackFeed.jsx
+      ProfileSetup.css
+      ProfileSetup.jsx
+      SentimentChart.jsx
+      Setting.css
+      Settings.jsx
+      Sidebar.css
+      Sidebar.jsx
+    context/
+      AuthContext.jsx
+    layouts/
+      DashboardLayout.jsx
+    pages/
+      Dashboard.css
+      Dashboard.jsx
+      FeedbackForm.css
+      FeedbackForm.jsx
+      Login.css
+      Login.jsx
+    routes/
+      ProtectedRoute.jsx
+      PublicRoute.jsx
+    utils/
+      api.js
+    App.css
+    App.jsx
+    index.css
+    main.jsx
+  .env
+  .gitignore
+  eslint.config.js
+  index.html
+  package.json
+  README.md
+  vite.config.js
+server/
+  src/
+    config/
+      cloudinary.js
+    controller/
+      authController.js
+      businessController.js
+      feedbackController.js
+    db/
+      index.js
+      schema.sql
+    middleware/
+      authMiddleware.js
+    routes/
+      authRoutes.js
+      businessRoute.js
+      feedbackRoutes.js
+    utils/
+      asyncWrap.js
+      ipAddress.js
+    app.js
+  .env
+  package.json
+README.md
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="client/public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="client/public/icons.svg">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bluesky-icon" viewBox="0 0 16 17">
+    <g clip-path="url(#bluesky-clip)"><path fill="#08060d" d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></g>
+    <defs><clipPath id="bluesky-clip"><path fill="#fff" d="M.1.85h15.3v15.3H.1z"/></clipPath></defs>
+  </symbol>
+  <symbol id="discord-icon" viewBox="0 0 20 19">
+    <path fill="#08060d" d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82"/>
+  </symbol>
+  <symbol id="documentation-icon" viewBox="0 0 21 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777"/>
+  </symbol>
+  <symbol id="github-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/>
+  </symbol>
+  <symbol id="social-icon" viewBox="0 0 20 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0"/>
+  </symbol>
+  <symbol id="x-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clip-rule="evenodd"/>
+  </symbol>
+</svg>
+</file>
+
+<file path="client/src/assets/download.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download-icon lucide-download"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+</file>
+
+<file path="client/src/assets/layout-dashboard.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard-icon lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+</file>
+
+<file path="client/src/assets/link.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+</file>
+
+<file path="client/src/assets/messages-square.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-messages-square-icon lucide-messages-square"><path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/><path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1"/></svg>
+</file>
+
+<file path="client/src/assets/qr-code.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-qr-code-icon lucide-qr-code"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></svg>
+</file>
+
+<file path="client/src/assets/react.svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
+</file>
+
+<file path="client/src/assets/rightArrow.svg">
+<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg fill="#FAFAFA" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"/></svg>
+</file>
+
+<file path="client/src/assets/settings.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+</file>
+
+<file path="client/src/assets/thumbs-down.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-down-icon lucide-thumbs-down"><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/><path d="M17 14V2"/></svg>
+</file>
+
+<file path="client/src/assets/thumbs-up.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up-icon lucide-thumbs-up"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/><path d="M7 10v12"/></svg>
+</file>
+
+<file path="client/src/assets/vite.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="client/src/assets/x.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+</file>
+
+<file path="client/src/components/AnalyticsDashboard.css">
+/* AnalyticsDashboard.css */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: transparent; /* Deep dark background */
+  color: #fafafa;
+  font-family: "Inter", sans-serif;
+}
+
+
+.sharingBtnWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.sharingBtn {
+  text-decoration: none;
+  padding: 8px 10px;
+  /* background-color: blue; */
+  flex: 1;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.getQrBtn {
+  background-color: #863bff;
+}
+
+.copyLink {
+  background-color: transparent;
+  border: 2px solid #863bff;
+}
+
+/* Main Content */
+.loadingScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  max-height: 100vh;
+}
+.dashboard-header {
+  margin-bottom: 20px;
+}
+.subtitle {
+  color: #a1a1aa;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* Grid Layouts */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+  width: auto;
+}
+.charts-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.stat-card,
+.chart-card,
+.table-section {
+  background-color: #141417;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 20px;
+}
+.chart-card {
+  width: 100%;
+}
+.stat-card h3,
+.chart-card h3,
+.table-section h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #a1a1aa;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.stat-value {
+  font-size: 32px;
+  font-weight: 600;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.positive-trend {
+  color: #22bb33;
+  font-size: 14px;
+}
+
+/* Placeholder for Charts */
+.placeholder-chart {
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #27272a;
+  color: #a1a1aa;
+  border-radius: 8px;
+}
+
+/* Table */
+/* --- 1. The Bulletproof Table Foundation --- */
+.feedback-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* THE MAGIC BULLET: Forces table to obey strict widths */
+}
+
+.feedback-table th,
+.feedback-table td {
+  text-align: left;
+  vertical-align: middle;
+  padding: 16px 0; /* Removed horizontal padding to let columns maximize space */
+}
+
+.feedback-table th {
+  color: #a1a1aa;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #27272a;
+}
+
+.feedback-table td {
+  font-size: 14px;
+  color: #fafafa;
+  border-bottom: 1px solid rgba(39, 39, 42, 0.5);
+}
+
+/* --- 2. Strict Column Widths (Applied to <th>) --- */
+.nameColumn {
+  width: 15%;
+}
+.ratingColumn {
+  width: 160px; /* Fixed width for stars */
+}
+.messageColumn {
+  width: auto; /* Takes up all remaining space */
+}
+.timeStamp {
+  width: 12%;
+}
+
+/* --- 3. Protection Against Malicious Names --- */
+.nameCell {
+  white-space: nowrap; /* Forces name to stay on one line */
+  overflow: hidden; 
+  text-overflow: ellipsis; /* Adds the ... */
+  padding-right: 15px;
+}
+
+/* --- 4. Protection Against Giant Comments --- */
+.messageTable {
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2; /* Allows exactly 2 lines before clamping */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all; /* The sledgehammer for unbroken strings */
+  padding-right: 20px;
+}
+.ratingStarsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+/* QRcode pop up styling */
+.qrCodeBoxWrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.568);
+  cursor: auto;
+}
+.qrCodeBox {
+  background-color: #0a0a0b;
+  /* height: 600px; */
+  border-radius: 15px;
+  box-shadow: 0 0 20px 0 #863bff;
+  border: 2px solid #863bff;
+  width: 400px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+.closeQr {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+}
+.getQR {
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 25px;
+  line-height: 25px;
+}
+.qrCodeWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 0 20px 0 #863bff;
+  border-radius: 10px;
+  border: 2px solid #863bff;
+}
+
+.downloadQrBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.downloadIconQR {
+  margin-right: 5px;
+}
+</file>
+
+<file path="client/src/components/AnalyticsDashboard.jsx">
+import { useEffect, useRef, useState } from "react";
+import Sidebar from "./Sidebar";
+import "./AnalyticsDashboard.css";
+import QRIcon from "../assets/qr-code.svg?react";
+import LinkIcon from "../assets/link.svg?react";
+import DownloadIcon from "../assets/download.svg?react";
+import CloseIcon from "../assets/x.svg?react";
+import TrendData from "./SentimentChart";
+import { QRCodeCanvas } from "qrcode.react";
+import { Navigate, useNavigate, useOutletContext } from "react-router-dom";
+import API_URL from "../utils/api";
+
+function AnalyticsDashboard() {
+  const [businessData, setBusinessData] = useState(null);
+  const [isCopied, setIsCopied] = useState(false);
+  const [qrPopUp, setQrPopUp] = useState(false);
+  const qrCode = useRef(null);
+  const navigate = useNavigate();
+  const { formatTime, renderStars } = useOutletContext();
+  function openQrPopUp() {
+    setQrPopUp(true);
+  }
+  function closeQrPopUp(e) {
+    if (e.target.className === "qrCodeBoxWrapper") {
+      setQrPopUp(false);
+    } else if (e.currentTarget.className === "closeQr") {
+      setQrPopUp(false);
+    }
+  }
+  function downloadQr(e) {
+    let current = qrCode.current;
+    if (current) {
+      console.log(current);
+      const pngUrl = current.toDataURL("image/png");
+      let downloadLink = document.createElement("a");
+      downloadLink.href = pngUrl;
+      downloadLink.download = `${businessData.businessName.replace("/\s+/g", "_")}_QR.png`;
+      document.body.appendChild(downloadLinik);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    }
+  }
+  useEffect(() => {
+    async function compulsion() {
+      const token = localStorage.getItem("feedback_token");
+      const result = await fetch(`${API_URL}/api/feedback`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const fetchedData = await result.json();
+      if (result.ok) {
+        setBusinessData(fetchedData);
+      } else if (fetchedData.message === "Redirect to setup form") {
+        return navigate("/setUpForm");
+      }
+    }
+    compulsion();
+  }, []);
+
+  if (!businessData)
+    return (
+      <div className="loadingScreen">
+        <h2
+          style={{ color: "#FAFAFA", textAlign: "center", marginTop: "50px" }}
+        >
+          Loading your dashboard...
+        </h2>
+      </div>
+    );
+  async function copyFormLink() {
+    await navigator.clipboard.writeText(businessData.feedbackUrl);
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
+  }
+  return (
+    <main className="main-content">
+      <header className="dashboard-header">
+        <div>
+          <p className="subtitle">BUSINESS PERFORMANCE DASHBOARD</p>
+          <h1>Welcome Back, Owner!</h1>
+        </div>
+      </header>
+
+      {/* TOP STAT CARDS */}
+      <section className="stats-grid">
+        <div className="stat-card">
+          <h3>Total Resposes</h3>
+          <div className="stat-value">{businessData.totalResponses}</div>
+        </div>
+        <div className="stat-card">
+          <h3>Average Rating</h3>
+          <div className="stat-value">{businessData.averageRating}</div>
+        </div>
+        <div className="stat-card">
+          <h3>Net Promoter Score (NPS)</h3>
+          <div className="stat-value">{businessData.npsScore}</div>
+        </div>
+        <div className="stat-card">
+          <h3>Sharing Console</h3>
+          <div className="sharingBtnWrapper">
+            <a onClick={openQrPopUp} className="sharingBtn getQrBtn">
+              Get QR
+            </a>
+            <div
+              style={qrPopUp ? { display: "flex" } : { display: "none" }}
+              onClick={closeQrPopUp}
+              className="qrCodeBoxWrapper"
+            >
+              <div className="qrCodeBox active">
+                <h1 className="getQR">GET QR CODE</h1>
+                <div className="qrCodeWrapper">
+                  <QRCodeCanvas
+                    ref={qrCode}
+                    id="qrCode"
+                    value={businessData.feedbackUrl}
+                    size={220}
+                    bgColor="#141417"
+                    fgColor="#FAFAFA"
+                    level={"H"}
+                  />
+                </div>
+                <button onClick={downloadQr} className="downloadQrBtn">
+                  <DownloadIcon className="downloadIconQR" />
+                  Download QR Code
+                </button>
+                <div onClick={closeQrPopUp} className="closeQr">
+                  <CloseIcon />
+                </div>
+              </div>
+            </div>
+            <a className="sharingBtn copyLink" onClick={copyFormLink}>
+              {isCopied ? "Copied" : "Copy Link"}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CHARTS PLACEHOLDER */}
+      <section className="charts-grid">
+        <div className="chart-card line-chart">
+          <h3>SENTIMENT TREND OVER TIME</h3>
+          <div className="placeholder-chart">
+            <TrendData data={businessData.trendLineData} />
+          </div>
+        </div>
+      </section>
+
+      {/* RECENT FEEDBACK TABLE */}
+      <section className="table-section">
+        <h3>RECENT FEEDBACK FEED</h3>
+        <table className="feedback-table">
+          <thead>
+            <tr>
+              <th className="nameColumn">USER</th>
+              <th className="ratingColumn">RATING</th>
+              <th className="messageColumn">COMMENT</th>
+              <th className="timeStamp">TIMESTAMP</th>
+            </tr>
+          </thead>
+          <tbody>
+            {businessData.latestFeedback.map((e, i) => {
+              const timeStamp = new Date(e.created_at);
+              return (
+                <tr key={i}>
+                  {/* Added .nameCell to protect against long names */}
+                  <td
+                    className="nameCell"
+                    title={e.customer_name || "Anonymous"}
+                  >
+                    {e.customer_name || "Anonymous"}
+                  </td>
+
+                  <td>{renderStars(e.rating, "ratingStarsWrapper")}</td>
+
+                  {/* Wrapped the message in a div so the clamp works perfectly */}
+                  <td>
+                    <div className="messageTable" title={e.message}>
+                      {e.message}
+                    </div>
+                  </td>
+
+                  <td>{formatTime(timeStamp)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </section>
+    </main>
+  );
+}
+
+export default AnalyticsDashboard;
+</file>
+
+<file path="client/src/components/FeedbackFeed.css">
+/* --- MAIN CONTENT AREA --- */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #fafafa;
+  min-height: 100vh;
+  font-family:
+    "poppins", "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.page-subtitle {
+  color: #a1a1aa;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* --- FILTERS SECTION --- */
+.filters-bar {
+  background-color: #141417;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-input,
+.filter-select {
+  background-color: #0a0a0b;
+  border: 1px solid #27272a;
+  color: #fafafa;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.filter-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  border-color: #863bff;
+  box-shadow: 0 0 0 3px rgba(134, 59, 255, 0.15);
+}
+
+/* --- FEEDBACK LIST --- */
+.feedback-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.feedback-card {
+  background-color: #141417;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 24px;
+  /* transition: all 0.2s ease; */
+}
+
+.feedback-card:hover {
+  border-color: #863bff;
+  box-shadow: 0 0 15px rgba(134, 59, 255, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.customer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.customer-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #27272a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #fafafa;
+}
+
+.customer-details h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.customer-details p {
+  color: #a1a1aa;
+  font-size: 12px;
+  margin: 0;
+}
+
+.rating-stars,
+.feedbackFeedStars {
+  display: flex;
+  gap: 2px;
+}
+
+.star,
+.feedbackFeedStars svg {
+  width: 18px;
+  height: 18px;
+}
+
+.star.filled {
+  fill: #863bff;
+  stroke: #863bff;
+}
+
+.star.empty {
+  fill: transparent;
+  stroke: #27272a;
+  stroke-width: 2px;
+}
+
+.feedback-message {
+  color: #d4d4d8;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  /* this to solve that hahahahaha word problem */
+    overflow-wrap: break-word ;
+    word-break: break-word;
+  /* ... feature */
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</file>
+
+<file path="client/src/components/FeedbackFeed.jsx">
+import React from "react";
+import Sidebar from "./Sidebar";
+import "./FeedbackFeed.css";
+import { useOutletContext } from "react-router-dom";
+import { useEffect, useState } from "react";
+import API_URL from "../utils/api";
+
+function FeedbackFeed() {
+  const [feedbacks, setFeedbacks] = useState(null);
+  const { formatTime, renderStars } = useOutletContext();
+  const [filterRatingNum, setFilterRatingNum] = useState("all");
+  const [filterTime, setFilterTime] = useState("24-hours");
+  const [searchQuery, setSearchQuery] = useState("");
+  useEffect(() => {
+    const token = localStorage.getItem("feedback_token");
+    async function compulsion() {
+      const result = await fetch(
+        `${API_URL}/api/feedback/feed?range=${filterTime}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+      if (result.ok) {
+        let data = await result.json();
+        setFeedbacks(data.feedbacks);
+      }
+    }
+    compulsion();
+  }, [filterTime]);
+  function filterRatingFnx(e) {
+    const filterRatingValue = e.currentTarget.value;
+    if (filterRatingValue !== "all") {
+      setFilterRatingNum(parseInt(filterRatingValue, 10));
+    } else {
+      setFilterRatingNum("all");
+    }
+  }
+  function filterTimeFnx(e) {
+    const filterTimeValue = e.currentTarget.value;
+    if (filterTimeValue !== "24-hours") {
+      setFilterTime(filterTimeValue);
+    } else {
+      setFilterTime(filterTimeValue);
+    }
+  }
+  function feedbackFnx(feedbackData) {
+    return (
+      <div className="feedback-card">
+        <div className="card-header">
+          <div className="customer-info">
+            <div className="customer-avatar">
+              {feedbackData.customer_name
+                ? feedbackData.customer_name.slice(0, 1).toUpperCase()
+                : "?"}
+            </div>
+            <div className="customer-details">
+              <h4>
+                {feedbackData.customer_name
+                  ? feedbackData.customer_name
+                  : "Anonymous"}
+              </h4>
+              <p>{`${feedbackData.customer_email ? `${feedbackData.customer_email} •` : ""} ${formatTime(feedbackData.created_at, "year")}`}</p>
+            </div>
+          </div>
+          {renderStars(feedbackData.rating, "feedbackFeedStars")}
+        </div>
+        <p className="feedback-message">{feedbackData.message}</p>
+      </div>
+    );
+  }
+  function searchQueryFnx(e) {
+    setSearchQuery(e.currentTarget.value);
+  }
+  if (!feedbacks) {
+    return (
+      <div className="loadingScreen">
+        <h2
+          style={{ color: "#FAFAFA", textAlign: "center", marginTop: "50px" }}
+          i
+        >
+          Loading your feedbacks...
+        </h2>
+      </div>
+    );
+    i;
+  }
+  const filteredArr = feedbacks
+    .filter((e) => {
+      // this is for that rating filter.
+      if (filterRatingNum !== "all") {
+        return e.rating === filterRatingNum;
+      }
+      return true;
+    })
+    .filter((e, i) => {
+      let name = e.customer_name?.toLowerCase() || "";
+      let email = e.customer_email?.toLowerCase() || "";
+      let message = e.message?.toLowerCase() || "";
+      let searchQueryLowerCase = searchQuery.toLowerCase();
+      if (searchQuery === "") return true;
+      return (
+        name.includes(searchQueryLowerCase) ||
+        email.includes(searchQueryLowerCase) ||
+        message.includes(searchQueryLowerCase)
+      );
+    });
+  return (
+    <main className="main-content">
+      {/* Header */}
+      <header className="page-header">
+        <div>
+          <h1 className="page-title">Customer Feedback</h1>
+          <p className="page-subtitle">
+            View and manage all responses from your customers.
+          </p>
+        </div>
+      </header>
+
+      {/* Filters Bar */}
+      <div className="filters-bar">
+        <input
+          type="text"
+          onChange={searchQueryFnx}
+          value={searchQuery}
+          className="filter-input"
+          placeholder="Search by name, email, or keyword..."
+        />
+        <select className="filter-select" onChange={filterRatingFnx}>
+          <option value="all">All Ratings</option>
+          <option value="5">5 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="2">2 Stars</option>
+          <option value="1">1 Star</option>
+        </select>
+        <select className="filter-select" onChange={filterTimeFnx}>
+          <option value="24-hours">Last 24 Hours</option>
+          <option value="7-days">Last 7 Days</option>
+          <option value="30-days">Last 30 Days</option>
+          <option value="all-time">All Time</option>
+        </select>
+      </div>
+
+      {/* Feedback Cards List */}
+      <div className="feedback-list">
+        {filteredArr.length === 0 ? (
+          <div
+            style={{
+              textAlign: "center",
+              color: "#a1a1aa",
+              gridColumn: "1 / -1",
+              marginTop: "40px",
+            }}
+          >
+            <h3>No feedbacks found.</h3>
+            <p>Try adjusting your search or filters.</p>
+          </div>
+        ) : (
+          feedbacks.map((e, i) => feedbackFnx(e)) // this is the actual feedback rendering engine.
+        )}
+      </div>
+    </main>
+  );
+}
+
+export default FeedbackFeed;
+</file>
+
+<file path="client/src/components/ProfileSetup.css">
+#setupFormWrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#firstThing {
+    margin: 0;
+    font-size: 40px;
+    text-align: center;
+}
+#businessProfile {
+    margin: 0;
+    text-align: center;
+    opacity: 0.8;
+}
+#setupForm {
+    width: 500px;
+    /* height: 600px; */
+    background-color: #141417;
+    border: 1px solid #863BFF;
+    border-radius: 10px;
+    box-shadow: 0 0 20px -2px #863BFF;
+}
+#formHero {
+    border-bottom: 1px solid #27272A;
+    height: 121px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #0a0a0b;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    background-image: radial-gradient(circle 120px at 50% -100%, rgba(134, 59, 255, 0.6) 0%, transparent 250%);
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+#sameBtn {
+    align-items: center;
+}
+#form {
+    padding: 1rem 2rem 1.5rem 2rem;
+    height: auto;
+}
+#companyLogoInput {
+    display: none;
+}
+#companyLogoLabel {
+    background-color: #0a0a0b;
+    height: 150px;
+    border: none;
+    overflow: hidden;
+    position: relative;
+  transition: all 0.2s ease;
+  
+}
+#companyLogoLabel:hover {
+  box-shadow: 0 0 20px -5px #863BFF;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23863BFF' stroke-width='3' stroke-dasharray='6%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+#logoUpload * {
+    transition: all 0.2s ease;
+}
+#companyLogoLabel:hover #logoUpload span {
+    color: #863BFF;
+}
+#companyLogoLabel:hover #logoUpload svg {
+    stroke: #863BFF;
+}
+.dotted-border {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%233e403f' stroke-width='3' stroke-dasharray='6%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+#companyLogoWrapper p {
+    margin: 0 0 7px 0;
+}
+label {
+    margin-bottom: 3px;
+}
+#logoUpload * {
+    opacity: 0.7;
+}
+#companyLogoLabel span {
+    font-size: 14px;
+}
+#rightArrowIcon {
+    height: 25px;
+    width: 25px;
+    fill: #FAFAFA;
+    margin: 0;
+    box-sizing: border-box;
+}
+#saveBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+#promptInput {
+    height: 80px;
+}
+#charCount {
+    font-size: 12px;
+    align-self: flex-end;
+    margin-top: 3px;
+}
+#promptWrapper {
+    margin-bottom: 0;
+}
+.logoImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+    inset: 0;
+    position: absolute;
+}
+#logoUpload {
+    transform: translateY(-5px);
+}
+#logoUploaded {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: row;
+}
+#logoImgWrapper {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    /* background-color: yellow; */
+    /* border: 2px solid red; */
+    overflow: hidden;
+}
+#logoImgWrapper img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 10;
+}
+#logoInfo {
+    margin: 0;
+    font-weight: 600;
+    opacity: 0.8;
+}
+#ratio {
+    font-size: 12px;
+    opacity: 0.9;
+}
+</file>
+
+<file path="client/src/components/ProfileSetup.jsx">
+import { useEffect, useState } from "react";
+import rightArrowIcon from "../assets/rightArrow.svg";
+import "./ProfileSetup.css";
+import { useNavigate } from "react-router-dom";
+import API_URL from "../utils/api";
+
+function ProfileSetup() {
+  const MAX_BUSINESS_NAME_LENGTH = 50;
+  const [imageUploaded, setImageUploaded] = useState(false);
+  const [imageUrl, setImageUrl] = useState("");
+  const [logoFile, setLogoFile] = useState(null);
+  const [businessName, setBusinessName] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  useEffect(() => {
+    async function compulsion() {
+      const token = localStorage.getItem("feedback_token");
+      if (!token) {
+        navigate("/login");
+        return;
+      }
+      const result = await fetch(`${API_URL}/api/feedback`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const fetchedData = await result.json();
+      if (result.ok) {
+        navigate("/dashboard");
+        return;
+      } else if (fetchedData.message === "Redirect to setup form") {
+        navigate("/setUpForm");
+        return;
+      } else {
+        navigate("/login");
+        return;
+      }
+    }
+    compulsion();
+  }, [navigate]);
+
+  const cleanedBusinessName = businessName.trim();
+  const businessNameWords = cleanedBusinessName
+    ? cleanedBusinessName.split(/\s+/)
+    : [];
+  const hasGiantWords = businessNameWords.some((word) => word.length >= 20);
+  const isOnlyNumbers =
+    /^[\d\s\W]+$/.test(cleanedBusinessName) && cleanedBusinessName.length > 0;
+  const hasDigits = /\d/.test(cleanedBusinessName);
+  const hasSpamRepetition = /(.)\1{9,}/.test(cleanedBusinessName);
+  const isLengthValid = cleanedBusinessName.length <= MAX_BUSINESS_NAME_LENGTH;
+  const isBusinessNameValid =
+    cleanedBusinessName.length > 0 &&
+    !hasGiantWords &&
+    !isOnlyNumbers &&
+    !hasDigits &&
+    !hasSpamRepetition &&
+    isLengthValid &&
+    /^[\p{L}\s'-]+$/u.test(cleanedBusinessName);
+  const isLogoValid =
+    !!logoFile &&
+    ["image/jpeg", "image/png", "image/jpg"].includes(logoFile.type);
+  const isFormValid = isBusinessNameValid && isLogoValid;
+
+  function validateBusinessName(value) {
+    const trimmedValue = value.trim();
+    const words = trimmedValue ? trimmedValue.split(/\s+/) : [];
+    const giantWord = words.some((word) => word.length >= 20);
+    const onlyNumbers =
+      /^[\d\s\W]+$/.test(trimmedValue) && trimmedValue.length > 0;
+    const hasDigits = /\d/.test(trimmedValue);
+    const spamRepetition = /(.)\1{9,}/.test(trimmedValue);
+    const isLengthValid = trimmedValue.length <= MAX_BUSINESS_NAME_LENGTH;
+    return (
+      trimmedValue.length > 0 &&
+      !giantWord &&
+      !onlyNumbers &&
+      !hasDigits &&
+      !spamRepetition &&
+      isLengthValid &&
+      /^[\p{L}\s'-]+$/u.test(trimmedValue)
+    );
+  }
+
+  function imageUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        setError("Please upload an image smaller than 5MB.");
+        setLogoFile(null);
+        setImageUploaded(false);
+        setImageUrl("");
+        return;
+      }
+      if (!["image/jpeg", "image/png", "image/jpg"].includes(file.type)) {
+        setError("Please upload a valid JPG or PNG image.");
+        setLogoFile(null);
+        setImageUploaded(false);
+        setImageUrl("");
+        return;
+      }
+      setError("");
+      setLogoFile(file);
+      setImageUploaded(true);
+      const tempUrl = URL.createObjectURL(file);
+      setImageUrl(tempUrl);
+    }
+  }
+  async function handleSubmit(event) {
+    event.preventDefault();
+    if (!validateBusinessName(businessName)) {
+      setError(
+        "Enter a valid business name using only letters, spaces, apostrophes, or hyphens. Avoid digits and long unbroken words.",
+      );
+      return;
+    }
+    if (!logoFile) {
+      setError("Please upload a logo image.");
+      return;
+    }
+    if (!["image/jpeg", "image/png", "image/jpg"].includes(logoFile.type)) {
+      setError("Please upload a valid JPG or PNG logo.");
+      return;
+    }
+    const formData = new FormData(event.target);
+    const token = localStorage.getItem("feedback_token");
+    try {
+      const result = await fetch(`${API_URL}/api/businesses`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
+      if (result.ok) {
+        console.log(`Data saved succesfully.`);
+      } else {
+        const errorData = await result.json();
+        setError(errorData.message || "Failed to save data.");
+        console.log(`Failed to save data.`);
+      }
+    } catch (error) {
+      setError("Error while submitting the form.");
+      console.log(`Error while submitting the form: ${error}`);
+    }
+  }
+  return (
+    <div id="setupFormWrapper">
+      <div id="setupForm">
+        <div id="formHero">
+          <h1 id="firstThing">First things, first</h1>
+          <p id="businessProfile">Let's Complete Your Business Profile</p>
+        </div>
+        <form id="form" encType="multipart/form-data" onSubmit={handleSubmit}>
+          <div id="businessNameWrapper" className="wrapper">
+            <label htmlFor="businessNameInput">Business Name</label>
+            <input
+              autoComplete="off"
+              type="text"
+              className="input"
+              placeholder="e.g., The Cozy Cafe"
+              id="businessNameInput"
+              name="name"
+              maxLength={MAX_BUSINESS_NAME_LENGTH}
+              value={businessName}
+              onChange={(event) => {
+                setBusinessName(event.target.value);
+                if (error) setError("");
+              }}
+            />
+            <p id="charCount">
+              {businessName.length}/{MAX_BUSINESS_NAME_LENGTH}
+            </p>
+          </div>
+          <div id="companyLogoWrapper" className="wrapper">
+            <p>
+              Upload your company logo{" "}
+              <span id="ratio">(1:1 ratio is recommended)</span>
+            </p>
+            <label
+              htmlFor="companyLogoInput"
+              className="input dotted-border"
+              id="companyLogoLabel"
+            >
+              <div
+                id="logoUpload"
+                className="logoImg"
+                style={{ display: imageUploaded ? "none" : "" }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="55"
+                  height="55"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <span>Click to upload or drag and drop image</span>
+              </div>
+              <div
+                id="logoUploaded"
+                className="logoImg"
+                style={{ display: imageUploaded ? "" : "none" }}
+              >
+                <div id="logoImgWrapper">
+                  {imageUrl && (
+                    <img alt="Uploaded logo preview" src={imageUrl} />
+                  )}
+                </div>
+                <h2 id="logoInfo">
+                  Click to change <br /> the logo.
+                </h2>
+              </div>
+            </label>
+            <input
+              type="file"
+              onChange={imageUpload}
+              id="companyLogoInput"
+              accept="image/jpeg, image/png, image/jpg"
+              name="logo"
+              autoComplete="off"
+            />
+          </div>
+          {error ? (
+            <p style={{ color: "#ff4444", margin: "0 0 10px 0" }}>{error}</p>
+          ) : null}
+          <button
+            id="saveBtn"
+            disabled={!isFormValid}
+            style={{
+              cursor: isFormValid ? "pointer" : "not-allowed",
+              opacity: isFormValid ? 1 : 0.5,
+            }}
+          >
+            <span> Save Profile</span>
+            <img id="rightArrowIcon" src={rightArrowIcon} alt="rightArrow" />
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default ProfileSetup;
+</file>
+
+<file path="client/src/components/SentimentChart.jsx">
+import { ResponsiveContainer, XAxis, YAxis, Tooltip, Line, LineChart, CartesianGrid } from 'recharts'
+
+function TrendData({ data }) {
+  const chartMargin = {top: 25, right:30, bottom: 15, left: -25}
+  function formatXaxisDates(currentDate) {
+    let date = new Date(currentDate)
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric"
+    })
+  }
+    return (
+      <ResponsiveContainer width="100%" height={350}>
+        <LineChart data={data} margin={chartMargin}>
+          <CartesianGrid
+            vertical={false}
+            stroke="#27272a7e"
+            strokeDasharray="5 3"
+          />
+          <XAxis
+            dataKey="date"
+            tickFormatter={formatXaxisDates}
+            tickMargin={10}
+          />
+          <YAxis domain={[0, 5]} ticks={[1, 2, 3, 4, 5]} />
+          <Tooltip
+            contentStyle={{
+              // this style the hover box.
+              backgroundColor: "#141417",
+              border: "1px solid #27272A",
+              borderRadius: "8px",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)",
+            }}
+            itemStyle={{ color: "#863BFF", fontWeight: 600 }} // this styles that rating num like 4.5.
+            labelStyle={{
+              color: "#A1A1AA",
+              fontSize: "13px",
+              paddingBottom: "4px",
+            }} // this style that date.
+            formatter={(value)=> [`${value} Stars`, `Average Rating`]} // [`Value`, `its label like in our case Average rating.`]
+            labelFormatter={(value)=> formatXaxisDates(value)}
+          />
+          <Line
+            type="monotone"
+            dataKey="average_rating"
+            stroke="#863BFF"
+            strokeWidth={2}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    );
+}
+
+export default TrendData;
+</file>
+
+<file path="client/src/components/Setting.css">
+/* --- Setting.css --- */
+
+/* Standardized Top-Left Header */
+.settings-header {
+  margin-bottom: 20px;
+}
+
+.settings-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: #fafafa;
+}
+
+.settings-header p {
+  color: #a1a1aa;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* The Magic Centering Container */
+.settingFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers vertically */
+  width: 100%;
+  /* Takes the full viewport height minus the header and padding to perfectly center */
+  min-height: calc(100vh - 160px);
+}
+
+.settings-wrapper {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Form Styles */
+.settings-form {
+  background-color: #141417;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #27272a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-weight: 500;
+  font-size: 15px;
+  color: #fafafa;
+}
+
+/* Custom Dotted Upload Box */
+.settings-file-input {
+  display: none;
+}
+
+.settings-logo-label {
+  background-color: #0a0a0b;
+  height: 140px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers everything horizontally */
+  padding: 0 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  /* Grey dotted border SVG */
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%233e403f' stroke-width='3' stroke-dasharray='6%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.settings-logo-label:hover {
+  box-shadow: 0 0 20px -5px #863bff;
+  /* Purple dotted border SVG on hover */
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23863BFF' stroke-width='3' stroke-dasharray='6%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.settings-logo-content {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Locks the image and text in the center */
+  gap: 20px;
+  width: 100%; /* Tells it to take up the whole box */
+}
+
+.settings-logo-preview {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+
+  /* Broken Image Fixes */
+  flex-shrink: 0; /* Prevents squishing */
+  background-color: #27272a; /* Clean placeholder color */
+  color: transparent; /* Hides ugly alt text */
+}
+
+.settings-logo-label:hover .settings-logo-preview {
+  border-color: #863bff;
+}
+
+.settings-upload-text h4 {
+  transition: color 0.2s ease;
+}
+
+.settings-logo-label:hover .settings-upload-text h4 {
+  color: #863bff;
+}
+
+.save-btn {
+  margin-top: 20px;
+}
+
+.settings-error {
+  margin: 0;
+  margin-top: 5px;
+  color: #ff4444;
+  font-size: 13px;
+}
+</file>
+
+<file path="client/src/components/Settings.jsx">
+import React, { useEffect, useState } from "react";
+import "./Setting.css";
+import { useOutletContext } from "react-router-dom";
+import API_URL from "../utils/api";
+
+function Settings() {
+  const MAX_BUSINESS_NAME_LENGTH = 50;
+  const [updatedName, setUpdatedName] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [imageUploaded, setImageUploaded] = useState(false);
+  const [logoFile, setLogoFile] = useState(null);
+  const [error, setError] = useState("");
+  const [logoError, setLogoError] = useState("");
+  const [originalName, setOriginalName] = useState("");
+  const [originalLogoUrl, setOriginalLogoUrl] = useState("");
+  const { nameLogo } = useOutletContext();
+  useEffect(() => {
+    if (nameLogo && nameLogo.businessName && nameLogo.logo_url) {
+      setUpdatedName(nameLogo.businessName);
+      setImageUrl(nameLogo.logo_url);
+      setOriginalName(nameLogo.businessName);
+      setOriginalLogoUrl(nameLogo.logo_url);
+      setImageUploaded(false);
+      setLogoFile(null);
+    }
+  }, [nameLogo]);
+
+  const cleanedUpdatedName = updatedName.trim();
+  const nameWords = cleanedUpdatedName ? cleanedUpdatedName.split(/\s+/) : [];
+  const hasGiantWords = nameWords.some((word) => word.length >= 20);
+  const isOnlyNumbers =
+    /^[\d\s\W]+$/.test(cleanedUpdatedName) && cleanedUpdatedName.length > 0;
+  const hasDigits = /\d/.test(cleanedUpdatedName);
+  const hasSpamRepetition = /(.)\1{9,}/.test(cleanedUpdatedName);
+  const isLengthValid = cleanedUpdatedName.length <= MAX_BUSINESS_NAME_LENGTH;
+  const isBusinessNameValid =
+    cleanedUpdatedName.length > 0 &&
+    !hasGiantWords &&
+    !isOnlyNumbers &&
+    !hasDigits &&
+    !hasSpamRepetition &&
+    isLengthValid &&
+    /^[\p{L}\s'-]+$/u.test(cleanedUpdatedName);
+  const isLogoValid = !logoError;
+  const hasChanges =
+    cleanedUpdatedName !== originalName.trim() ||
+    imageUploaded ||
+    imageUrl !== originalLogoUrl;
+  const isFormValid = isBusinessNameValid && isLogoValid && hasChanges;
+
+  function updatedNameFnx(e) {
+    setUpdatedName(e.currentTarget.value);
+    if (error) setError("");
+  }
+  function imageUpload(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      setLogoError("Please upload an image smaller than 5MB.");
+      setLogoFile(null);
+      return;
+    }
+    if (!["image/jpeg", "image/png", "image/jpg"].includes(file.type)) {
+      setLogoError("Please upload a valid JPG or PNG image.");
+      setLogoFile(null);
+      return;
+    }
+    setLogoError("");
+    setLogoFile(file);
+    const tempUrl = URL.createObjectURL(file);
+    setImageUrl(tempUrl);
+    setImageUploaded(true);
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (!isBusinessNameValid) {
+      setError(
+        "Enter a valid business name using only letters, spaces, apostrophes, or hyphens. Avoid digits and long unbroken words.",
+      );
+      return;
+    }
+    if (logoError) {
+      setError(logoError);
+      return;
+    }
+
+    setError("");
+
+    if (hasChanges) {
+      const formData = new FormData(e.currentTarget);
+      const token = localStorage.getItem("feedback_token");
+      try {
+        const result = await fetch(`${API_URL}/api/businesses`, {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        });
+        if (result.ok) {
+          console.log(`Data updated succesfully.`);
+          setOriginalName(cleanedUpdatedName);
+          setOriginalLogoUrl(imageUploaded ? imageUrl : originalLogoUrl);
+          setImageUploaded(false);
+          setLogoFile(null);
+        } else {
+          const errorData = await result.json();
+          setError(errorData.message || "Failed to update the data.");
+          console.log(`Failed to update the data.`);
+        }
+      } catch (error) {
+        setError("Error while submitting the form.");
+        console.log(`Error while submitting the form: ${error}`);
+      }
+    }
+  }
+  return (
+    <main className="main-content">
+      {/* 1. Standardized Top-Left Header */}
+      <header className="settings-header">
+        <h1>Business Settings</h1>
+        <p>Update your public profile details.</p>
+      </header>
+
+      {/* 2. Centered Form Container */}
+      <div className="settingFormContainer">
+        <div className="settings-wrapper">
+          <form className="settings-form" onSubmit={handleSubmit}>
+            <div className="input-group">
+              <label htmlFor="businessName">Business Name</label>
+              <input
+                type="text"
+                name="updatedName"
+                id="businessName"
+                className="input"
+                placeholder="e.g., The Cozy Cafe"
+                autoComplete="off"
+                value={updatedName}
+                maxLength={MAX_BUSINESS_NAME_LENGTH}
+                onChange={updatedNameFnx}
+              />
+            </div>
+
+            <div className="input-group" style={{ marginTop: "15px" }}>
+              <label>Current Logo</label>
+
+              {/* The Custom Dotted Upload Box */}
+              <label
+                htmlFor="settingsLogoInput"
+                className="settings-logo-label"
+              >
+                <div className="settings-logo-content">
+                  {/* Image Preview */}
+                  {imageUrl && (
+                    <img
+                      src="https://via.placeholder.com/150"
+                      alt="Business Logo"
+                      className="settings-logo-preview"
+                      src={imageUrl}
+                    />
+                  )}
+
+                  <div className="settings-upload-text">
+                    <h4 style={{ margin: "0 0 5px 0", color: "#FAFAFA" }}>
+                      Click to change logo
+                    </h4>
+                    <p
+                      style={{ margin: 0, fontSize: "12px", color: "#a1a1aa" }}
+                    >
+                      JPG or PNG (Max 5MB)
+                    </p>
+                  </div>
+                </div>
+              </label>
+
+              <input
+                type="file"
+                name="newLogo"
+                id="settingsLogoInput"
+                className="settings-file-input"
+                accept="image/jpeg, image/png, image/jpg"
+                onChange={imageUpload}
+              />
+            </div>
+
+            {error ? <p className="settings-error">{error}</p> : null}
+            {logoError ? <p className="settings-error">{logoError}</p> : null}
+
+            <button
+              type="submit"
+              className="save-btn"
+              disabled={!isFormValid}
+              style={{
+                cursor: isFormValid ? "pointer" : "not-allowed",
+                opacity: isFormValid ? 1 : 0.5,
+              }}
+            >
+              Save Changes
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+export default Settings;
+</file>
+
+<file path="client/src/components/Sidebar.css">
+/* Sidebar */
+.sidebar {
+  width: 285px;
+  background-color: #141417;
+  border-right: 1px solid #27272a;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  left: 0;
+  top: 0;
+}
+
+.nav-menu {
+  padding: 0px 20px;
+  box-sizing: border-biox;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #27272a;
+}
+
+.nav-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.navItemWrapper {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  width: 100%;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #a1a1aa;
+}
+
+.navItemWrapper:hover,
+.navItemWrapper.active {
+  background-color: rgba(134, 59, 255, 0.1);
+}
+
+.navItemWrapper:hover span,
+.navItemWrapper.active span {
+  color: #fafafa;
+}
+
+.navIcon {
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  stroke: #a1a1aa;
+}
+
+.navItemWrapper:hover .navIcon,
+.navIcon.active {
+  stroke: #fafafa;
+}
+</file>
+
+<file path="client/src/components/Sidebar.jsx">
+import "./Sidebar.css";
+import DashboardIcon from "../assets/layout-dashboard.svg?react";
+import FeedbackIcon from "../assets/messages-square.svg?react";
+import SettingsIcon from "../assets/settings.svg?react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import API_URL from "../utils/api";
+
+function Sidebar({ logo_url, businessName }) {
+  const [sidebarData, setSidebarData] = useState(null);
+  useEffect(() => {
+    async function compulsion() {
+      const token = localStorage.getItem("feedback_token");
+      const result = await fetch(`${API_URL}/api/feedback?data=sidebarData`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const fetchedData = await result.json();
+      setSidebarData(fetchedData);
+    }
+    compulsion();
+  }, []);
+  if (!sidebarData)
+    return (
+      <div
+        className="sidebar"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          maxHeight: "100vh",
+        }}
+      >
+        <p
+          style={{
+            color: "#FAFAFA",
+            textAlign: "center",
+            fontSize: "17px",
+            fontWeight: "400",
+          }}
+        >
+          Loading your sidebar...
+        </p>
+      </div>
+    );
+  return (
+    <aside className="sidebar">
+      <div className="brand">
+        <img src={sidebarData.logo_url} alt="Logo" className="nav-logo" />
+        <h2>{sidebarData.businessName}</h2>
+      </div>
+      <nav className="nav-menu">
+        <Link className="navItemWrapper" to="/dashboard">
+          <DashboardIcon className="dashboardIcon navIcon" />
+          <span className="nav-item">Dashboard</span>
+        </Link>
+        <Link className="navItemWrapper" to="/feedback">
+          <FeedbackIcon className="feedbackIcon navIcon" />
+          <span className="nav-item">Feedback</span>
+        </Link>
+        <Link className="navItemWrapper" to="/settings">
+          <SettingsIcon className="settingIcon navIcon" />
+          <span className="nav-item">Settings</span>
+        </Link>
+      </nav>
+    </aside>
+  );
+}
+
+export default Sidebar;
+</file>
+
+<file path="client/src/context/AuthContext.jsx">
+import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import API_URL from "../utils/api";
+const authContext = createContext();
+
+function AuthProvider({ children }) {
+  // this children is the that <App/> because we have wrpped that app inside our <AuthProvider/>.
+  const [authStatus, setAuthStatus] = useState("checking");
+  const updateStatus = (status) => {
+    setAuthStatus(status);
+  };
+  useEffect(() => {
+    async function compulsion() {
+      const token = localStorage.getItem("feedback_token");
+      if (!token) {
+        setAuthStatus("login");
+        return;
+      }
+      try {
+        const result = await fetch(`${API_URL}/api/feedback`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const fetchedData = await result.json();
+        if (result.ok) {
+          console.log(`I am working`);
+          setAuthStatus("dashboard");
+        } else if (fetchedData.message === "Redirect to setup form") {
+          console.log(`I am also working`);
+          setAuthStatus("setUpForm");
+          return;
+        } else {
+          // this menas they have token but it is invalid
+          setAuthStatus("loginInvalidToken");
+          return;
+        }
+      } catch (error) {
+        console.log(`Failed due to backend error.`);
+      }
+    }
+    compulsion();
+    window.addEventListener("storage", () => {
+      const token = localStorage.getItem("feedback_token");
+      if (!token) {
+        setAuthStatus("login");
+      }
+    });
+  }, []);
+  return (
+    <authContext.Provider value={{ authStatus, updateStatus }}>
+      {children}
+    </authContext.Provider>
+  );
+}
+
+export { AuthProvider, authContext };
+</file>
+
+<file path="client/src/layouts/DashboardLayout.jsx">
+import { Outlet } from "react-router-dom";
+import Sidebar from "../components/Sidebar";
+import { useEffect, useState } from "react";
+import API_URL from "../utils/api";
+
+function DashboardLayout() {
+  const [nameLogo, setNameLogo] = useState({});
+  useEffect(() => {
+    async function fetchBusinessData() {
+      try {
+        const token = localStorage.getItem("feedback_token");
+        // this request will be cought my that controller which provided all the data for the dashboard.
+        const result = await fetch(`${API_URL}/api/feedback`, {
+          headers: {
+            Authorization: `Bearer ${token ? token : ""}`,
+          },
+        });
+
+        let data = await result.json();
+        // If the fetch succeeds AND the backend found the business name
+        if (result.ok && data.businessName) {
+          const newData = {
+            businessName: data.businessName,
+            logo_url: data.logo_url,
+          };
+          setNameLogo(newData);
+        } else {
+          // If the ID is wrong, the backend sends a message. We catch it here!
+          console.log(
+            data.message || "Business profile not found in database.",
+          );
+        }
+      } catch (err) {
+        // If the backend is off or blocked, we catch the fatal network crash here!
+        console.error("Network Error:", err);
+        setError("Failed to connect to the Express backend.");
+      }
+    }
+    fetchBusinessData();
+  }, []);
+  function formatTime(garbageTimeStamp, year) {
+    const timeStamp = new Date(garbageTimeStamp);
+    let shortDate;
+    if (year) {
+      shortDate = timeStamp.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      });
+    } else {
+      shortDate = timeStamp.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+      });
+    }
+
+    ` at `;
+    const time = timeStamp.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+    return `${shortDate} at ${time}`;
+  }
+  function renderStars(ratingNum, className) {
+    return (
+      <div className={className}>
+        {[...Array(5)].map((_, index) => {
+          let isFilled = index < ratingNum;
+          return (
+            <svg
+              key={index}
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill={isFilled ? "#863bff" : "transparent"}
+              stroke={isFilled ? "#863bff" : "#27272a"}
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          );
+        })}
+      </div>
+    );
+  }
+  return (
+    <div className="main">
+      <Sidebar />
+      <Outlet context={{ formatTime, renderStars, nameLogo }} />
+    </div>
+  );
+}
+
+export default DashboardLayout;
+</file>
+
+<file path="client/src/pages/Dashboard.css">
+
+</file>
+
+<file path="client/src/pages/Dashboard.jsx">
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import ProfileSetup from "../components/ProfileSetup";
+import AnalyticsDashboard from "../components/AnalyticsDashboard";
+
+
+function Dashboard() {
+    const [ hasProfile, setHasProfile ] = useState(false);
+    const navigate = useNavigate();
+    useEffect(() => {
+        async function compelled()  {
+            const token = localStorage.getItem("feedback_token") // accessing token,
+            if (!token) { // checking does token exsist if not send them to login.
+                navigate("/login")
+            } else { // else let them in and fetch their profile data from the backend.
+                
+            }
+        }
+        compelled()
+    }, [navigate])
+    return (
+        hasProfile? <AnalyticsDashboard /> : <ProfileSetup />
+    )
+}
+
+export default Dashboard;
+</file>
+
+<file path="client/src/pages/FeedbackForm.css">
+/* --- Main Layout Wrapper --- */
+#feedbackFormWrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+  box-sizing: border-box;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 550px; /* This locks the UI from getting too wide on PC */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Hero & Logo Section --- */
+#heroSection {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#businessLogo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+#businessLogo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #863bff;
+  box-shadow: 0 0 15px rgba(134, 59, 255, 0.3);
+}
+
+#heroSection h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* --- Form Containers --- */
+.subForm {
+  background-color: #141417;
+  border: 1px solid #27272a;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+#customerFeedback {
+  color: #a1a1aa;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.subHeading {
+  margin: 0 0 10px 0;
+  font-weight: 500;
+  font-size: 18px;
+  display: block;
+}
+
+.wrapperBox {
+  margin-bottom: 24px;
+}
+
+/* --- Star Rating System --- */
+#stars {
+  border: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 10px; /* Even spacing between stars */
+}
+
+.starInput {
+  display: none;
+}
+
+.starLable {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* Kills the blue flash */
+  -webkit-user-select: none; /* Safari text selection prevention */
+  user-select: none; /* Global text selection prevention */
+}
+
+.star-svg {
+  fill: transparent;
+  stroke: #27272a;
+  stroke-width: 1.5px;
+  height: 45px;
+  width: 45px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Star Hover & Active Logic */
+.starLable:hover .star-svg,
+.starLable:hover ~ .starLable .star-svg,
+.starInput:checked ~ .starLable .star-svg {
+  fill: #863bff;
+  stroke: #863bff;
+}
+
+/* --- Inputs & Textareas --- */
+#feedbackPrompt {
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #0a0a0b;
+  border: 1px solid #27272a;
+  color: #fafafa;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+  resize: none;
+  min-height: 120px;
+}
+
+.optionalInputsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.optionalInput {
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #0a0a0b;
+  border: 1px solid #27272a;
+  color: #fafafa;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+  height: 50px;
+}
+
+#feedbackPrompt:focus,
+.optionalInput:focus {
+  border-color: #863bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(134, 59, 255, 0.15);
+}
+
+/* --- Submit Button --- */
+#submitBtn {
+  width: 100%;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 0.5rem;
+  margin-top: 5px;
+}
+</file>
+
+<file path="client/src/pages/FeedbackForm.jsx">
+import "./FeedbackForm.css";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import API_URL from "../utils/api";
+
+function FeedbackForm() {
+  const { id } = useParams();
+  const [starRating, setStarRating] = useState(0);
+  const [feedbackPrompt, setFeedbackPrompt] = useState("");
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+
+  // Data States
+  const [logoUrl, setLogoUrl] = useState("");
+  const [businessName, setBusinessName] = useState("");
+
+  // NEW: Error and Loading Armor
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchBusinessData() {
+      try {
+        const token = localStorage.getItem("feedback_token");
+        const result = await fetch(`${API_URL}/api/feedback/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token ? token : ""}`,
+          },
+        });
+
+        let data = await result.json();
+        // If the fetch succeeds AND the backend found the business name
+        if (result.ok && data.businessName) {
+          setLogoUrl(data.logo_url);
+          setBusinessName(data.businessName);
+        } else {
+          // If the ID is wrong, the backend sends a message. We catch it here!
+          setError(data.message || "Business profile not found in database.");
+        }
+      } catch (err) {
+        // If the backend is off or blocked, we catch the fatal network crash here!
+        console.error("Network Error:", err);
+        setError("Failed to connect to the Express backend.");
+      } finally {
+        setIsLoading(false); // Stop the loading screen whether it succeeded or failed
+      }
+    }
+    fetchBusinessData();
+  }, [id]);
+
+  function onChange(e) {
+    if (e.target.id === "userNameInput") {
+      setUserName(e.target.value);
+    } else if (e.target.id === "userEmailInput") {
+      setUserEmail(e.target.value);
+    } else if (e.target.className === "starInput") {
+      setStarRating(parseInt(e.target.value, 10));
+    }
+  }
+
+  function handleTextChange(e) {
+    setFeedbackPrompt(e.target.value);
+    e.target.style.height = "auto";
+    e.target.style.height = `${e.target.scrollHeight}px`;
+  }
+
+  async function submitFeedback() {
+    let data =
+      userName && userEmail
+        ? {
+            business_id: id,
+            starRating,
+            feedbackPrompt,
+            isAnonymous: false,
+            userName,
+            userEmail,
+          }
+        : { business_id: id, starRating, feedbackPrompt, isAnonymous: true };
+
+    let jsonData = JSON.stringify(data);
+    let result = await fetch(`${API_URL}/api/feedback/${id}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: jsonData,
+    });
+    if (result.ok) {
+      console.log(`Data sent successfully.`);
+    }
+  }
+  // validating rating.
+  const isRatingValid = starRating > 0;
+  // validating message.
+  let isMessageValid = true;
+  if (feedbackPrompt.trim().length > 0) {
+    const wordsArr = feedbackPrompt.trim().split(/\s+/);
+    // Rule A: Kills "asdfghjklqwertyuiopzxcvbnm"
+    const hasGiantWords = wordsArr.some((word) => word.length > 25);
+
+    // Rule B: Kills "56723048569347856237845693675378456"
+    const isOnlyNumbers =
+      /^[\d\s\W]+$/.test(feedbackPrompt) && feedbackPrompt.trim().length > 5;
+
+    // Rule C: Kills "fffffffffffff" or "!!!!!!!!!!!"
+    const hasSpamRepetition = /(.)\1{9,}/.test(feedbackPrompt);
+    if (hasGiantWords || isOnlyNumbers || hasSpamRepetition) {
+      isMessageValid = false;
+    }
+  }
+  // validating name.
+  const isNameValid =
+    userName.trim() === "" || /^[\p{L}\s'-]+$/u.test(userName);
+  // validating email.
+  const isEmailValid =
+    userEmail.trim() === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail);
+  const isFormValid =
+    isRatingValid && isMessageValid && isNameValid && isEmailValid;
+  // --- NEW: Protective UI Renders ---
+
+  if (isLoading) {
+    return (
+      <div id="feedbackFormWrapper">
+        <h2 style={{ color: "#fafafa" }}>Loading form...</h2>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div id="feedbackFormWrapper">
+        <div
+          className="form-container"
+          style={{ textAlign: "center", color: "#fafafa" }}
+        >
+          <h2 style={{ color: "#ff4444" }}>Oops! Connection Failed.</h2>
+          <p>{error}</p>
+          <p style={{ color: "#a1a1aa", fontSize: "14px" }}>
+            Check your Express server terminal and verify this URL ID exists in
+            your database.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // --- Normal UI Render ---
+  return (
+    <div id="feedbackFormWrapper">
+      <div className="form-container">
+        {/* Hero Section */}
+        <div id="heroSection">
+          <div id="businessLogo">
+            {logoUrl && <img src={logoUrl} alt="Business Logo" />}
+          </div>
+          <h1>{businessName}</h1>
+        </div>
+
+        {/* Form Section */}
+        <div id="feedbackForm">
+          <div className="subForm" id="requiredForm">
+            <h3 id="customerFeedback">CUSTOMER FEEDBACK</h3>
+
+            <div id="experienceWrapper" className="wrapperBox">
+              <h3 id="experienceHeading" className="subHeading">
+                {promptMessage}
+              </h3>
+              <fieldset id="stars">
+                {[5, 4, 3, 2, 1].map((num) => (
+                  <React.Fragment key={num}>
+                    <input
+                      type="radio"
+                      id={`star${num}`}
+                      className="starInput"
+                      name="review[rating]"
+                      value={num}
+                      onChange={onChange}
+                      checked={starRating === num}
+                    />
+                    <label
+                      htmlFor={`star${num}`}
+                      className="starLable"
+                      title={`${num} stars`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        className="star-svg"
+                      >
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                      </svg>
+                    </label>
+                  </React.Fragment>
+                ))}
+              </fieldset>
+            </div>
+
+            <div id="improveWrapper" className="wrapperBox">
+              <label className="subHeading">How Can We Improve?</label>
+              <textarea
+                id="feedbackPrompt"
+                value={feedbackPrompt}
+                placeholder="Give your suggestions or tell us more about your visit..."
+                onChange={handleTextChange}
+              ></textarea>
+            </div>
+          </div>
+          <div className="subForm" id="optionalForm">
+            <h3 className="subHeading">Optional: Name and Email</h3>
+            <div className="optionalInputsWrapper">
+              <input
+                type="text"
+                value={userName}
+                id="userNameInput"
+                className="optionalInput"
+                placeholder="Full Name"
+                onChange={onChange}
+                autoComplete="off"
+              />
+              <input
+                type="email"
+                value={userEmail}
+                id="userEmailInput"
+                className="optionalInput"
+                placeholder="Email Address"
+                onChange={onChange}
+                autoComplete="off"
+              />
+            </div>
+          </div>
+
+          <button
+            id="submitBtn"
+            onClick={submitFeedback}
+            style={{
+              opacity: isFormValid ? 1 : 0.5,
+              cursor: isFormValid ? "pointer" : "not-allowed",
+            }}
+            disabled={!isFormValid}
+          >
+            SUBMIT FEEDBACK
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default FeedbackForm;
+</file>
+
+<file path="client/src/pages/Login.css">
+#loginPage {
+    background-color: transparent;
+    /* background-color: yellow; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#loginWrapper {
+    background-color: #141417;
+    border-radius: 10px;
+    border: 1px solid #27272A;
+    color: #FAFAFA;
+    padding: 1.5rem;
+    width: 320px;
+    /* height: 195px; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+#loginWrapper h1 {
+    font-family: poppins;
+    margin: 0;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+.sameWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.sameWrapper label{
+    font-family: poppins;
+}
+.sameWrapper input {
+    font-family: poppins;
+    font-size: 1rem;
+    padding: 6px 8px;
+    height: 40px;
+    color: #FAFAFA;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #0A0A0B;
+    border: 1px solid #27272A;
+    border-radius: 6px;
+}
+.sameBtn {
+    background-color: #863BFF;
+    border-radius: 5px;
+    border: none;
+    color: #FAFAFA;
+    font-family: poppins;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 8px 12px;
+    width: 100%;
+    margin-top: 20px;
+}
+</file>
+
+<file path="client/src/pages/Login.jsx">
+import { useState, useRef, useEffect, useContext } from "react";
+import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import { authContext } from "../context/AuthContext";
+import API_URL from "../utils/api";
+
+function Login() {
+  const [email, setEmail] = useState("");
+  const [OTP, setOTP] = useState("");
+  const [isCodeSent, setIsCodeSent] = useState(false);
+  // selecting elements replacement of document.querySelector
+  const emailInputRef = useRef(null);
+  const codeInputRef = useRef(null);
+  const getOtpRef = useRef(null);
+  const verifyBtnRef = useRef(null);
+  const navigate = useNavigate();
+  // using useEffect to autofocus input boxes
+  useEffect(() => {
+    // this was for email
+    if (emailInputRef.current) {
+      emailInputRef.current.focus();
+    }
+  }, []);
+  // now for OTP code
+  useEffect(() => {
+    if (isCodeSent && codeInputRef.current) {
+      codeInputRef.current.focus();
+    }
+  }, [isCodeSent]);
+  // validation for email.
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const isValidEmail = emailRegex.test(email);
+  // validation for OTP.
+  const otpRegex = /^\d{6}$/;
+  const isOTPvalid = otpRegex.test(OTP);
+  // functions...
+  function onChange(event) {
+    const value = event.target.value;
+    if (event.target.id === "emailInput") {
+      setEmail(value);
+    } else if (event.target.id === "codeInput") {
+      const numbersOnlyRegex = /^\d*$/;
+      if (numbersOnlyRegex.test(value) && value.length <= 6) {
+        setOTP(value);
+      }
+    }
+  }
+  // adding keyboard shortcut that when a user hits the enter key automatically the that send otp/verify button get trigged
+  function enterFnx(e) {
+    if (isCodeSent) {
+      if (e.key === "Enter") {
+        verifyBtnRef.current.click();
+      }
+    } else {
+      if (e.key === "Enter") {
+        getOtpRef.current.click();
+      }
+    }
+  }
+  async function getOTP(event) {
+    let result = await fetch(`${API_URL}/api/otp/send`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+      }),
+    });
+    if (result.ok) {
+      setIsCodeSent(true);
+    } else {
+      console.log(`Failed to send email.`);
+    }
+  }
+  const { updateStatus } = useContext(authContext);
+  async function verify(event) {
+    let result = await fetch(`${API_URL}/api/otp/verify`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        code: OTP,
+      }),
+    });
+    if (result.ok) {
+      const data = await result.json();
+      localStorage.setItem("feedback_token", data.token);
+
+      // Check if this user already has a business profile
+      const profileCheck = await fetch(`${API_URL}/api/businesses`, {
+        headers: { Authorization: `Bearer ${data.token}` },
+      });
+
+      if (profileCheck.ok) {
+        // Returning User -> Send to Dashboard
+        updateStatus("dashboard");
+        navigate("/dashboard");
+      } else {
+        // Brand New User -> Send to Setup Form
+        updateStatus("setUpForm");
+        navigate("/setUpForm");
+      }
+      return;
+    } else {
+      const errorData = await result.json();
+      console.log(`Login Failed: ${errorData.message}`);
+    }
+  }
+  return (
+    <div id="loginPage">
+      <div id="loginWrapper">
+        <h1>Login to Dashboard</h1>
+        <div
+          id="email"
+          className="same"
+          style={isCodeSent ? { display: "none" } : {}}
+        >
+          <div id="emailInputWrapper" className="sameWrapper">
+            <label htmlFor="emailInput">Enter your email</label>
+            <input
+              ref={emailInputRef} // accesing email input with the help of useRef
+              onChange={onChange}
+              value={email}
+              type="text"
+              id="emailInput"
+              placeholder="example@gmail.com"
+              onKeyDown={enterFnx}
+            />
+          </div>
+          <button
+            id="getOTPBtn"
+            onClick={getOTP}
+            className="sameBtn"
+            disabled={!isValidEmail}
+            style={{
+              cursor: isValidEmail ? "pointer" : "not-allowed",
+              opacity: isValidEmail ? 1 : 0.5,
+            }}
+            ref={getOtpRef}
+          >
+            Send OTP
+          </button>
+        </div>
+        <div
+          id="code"
+          className="same"
+          style={isCodeSent ? { display: "block" } : { display: "none" }}
+        >
+          <div id="codeInputWrapper" className="sameWrapper">
+            <label htmlFor="codeInput">Enter your OTP</label>
+            <input
+              ref={codeInputRef} // same like we did with email.
+              type="text"
+              autoComplete="off"
+              onChange={onChange}
+              value={OTP}
+              id="codeInput"
+              placeholder="XXXXXX"
+              onKeyDown={enterFnx}
+            />
+          </div>
+          <button
+            id="verifyBtn"
+            className="sameBtn"
+            onClick={verify}
+            disabled={!isOTPvalid}
+            style={{
+              cursor: isOTPvalid ? "pointer" : "not-allowed",
+              opacity: isOTPvalid ? 1 : 0.5,
+            }}
+            ref={verifyBtnRef}
+          >
+            Verify
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Login;
+</file>
+
+<file path="client/src/routes/ProtectedRoute.jsx">
+import { useContext, useEffect } from "react";
+import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { authContext } from "../context/AuthContext";
+
+function ProtectedRoute() {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const { authStatus } = useContext(authContext) // due to this we are accessing that data which our authcontext is broadcasting to his childrens.
+    const pathname = location.pathname
+    const token = localStorage.getItem("feedback_token");
+    if (!token || authStatus === "login" || authStatus === "loginInvalidToken") {
+        return <Navigate to="/login" replace/>
+    }
+    if (authStatus === "checking") {
+        return <h2 style={{ color: "#FAFAFA", textAlign: "center", marginTop: "50px" }}>Verifying Security Clearance...</h2>;
+    }
+    if (authStatus === "setUpForm") {
+        if (pathname !== "/setUpForm") {
+            return <Navigate to="/setUpForm" replace/>
+        }
+    }
+    if (authStatus === "dashboard") {
+        if (pathname !== "/dashboard" && pathname !== "/feedback" && pathname !== "/settings") {
+            return <Navigate to="/dashboard" replace/>
+        }
+    }
+    // if they pass all the filters then let them go where they wants to.
+  return <Outlet />; // this outlet means all the components which are wrapped in this ProtectedRoute render it.
+}
+
+export default ProtectedRoute;
+</file>
+
+<file path="client/src/routes/PublicRoute.jsx">
+import { useContext, useEffect } from "react";
+import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { authContext } from "../context/AuthContext";
+
+function PublicRoute() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { authStatus } = useContext(authContext);
+  if (authStatus === "checking") {
+    return (
+      <h2 style={{ color: "#FAFAFA", textAlign: "center", marginTop: "50px" }}>
+        Verifying Security Clearance...
+      </h2>
+    );
+  }
+  if (authStatus === "setUpForm") {
+    return <Navigate to="/setUpForm" replace />;
+  }
+  if (authStatus === "dashboard") {
+    return <Navigate to="/dashboard" replace />;
+  }
+  if (authStatus === "loginInvalidToken") {
+    localStorage.removeItem("feedback_token");
+    return <Outlet />; // this outlet means all the components which are wrapped in this ProtectedRoute render it.
+  }
+  return <Outlet />; // this outlet means all the components which are wrapped in this ProtectedRoute render it.
+}
+
+export default PublicRoute;
+</file>
+
+<file path="client/src/utils/api.js">
+const API_URL =
+  import.meta.env.VITE_API_URL?.replace(/\/$/, "") || "http://localhost:1234";
+
+export default API_URL;
+</file>
+
+<file path="client/src/App.css">
+
+</file>
+
+<file path="client/src/App.jsx">
+import "./App.css";
+import Login from "./pages/Login";
+import { Routes, Route } from "react-router-dom";
+import FeedbackForm from "./pages/FeedbackForm";
+import FeedbackFeed from "./components/FeedbackFeed";
+import ProfileSetup from "./components/ProfileSetup";
+import AnalyticsDashboard from "./components/AnalyticsDashboard";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import PublicRoute from "./routes/PublicRoute";
+import DashboardLayout from "./layouts/DashboardLayout";
+import Settings from "./components/Settings";
+
+function App() {
+  return (
+    <Routes>
+      <Route element={<ProtectedRoute />}>
+        <Route element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<AnalyticsDashboard />} />
+          <Route path="/feedback" element={<FeedbackFeed />} />
+          <Route path="/settings" element={<Settings />} />
+        </Route>
+        <Route path="/setUpForm" element={<ProfileSetup />} />
+      </Route>
+      <Route element={<PublicRoute />}>
+        <Route path="/login" element={<Login />} />
+      </Route>
+      <Route path="/" element={<ProtectedRoute />} />
+      <Route path="/feedbackForm/:id" element={<FeedbackForm />} />;
+      <Route
+        path="*"
+        element={
+          <div
+            style={{
+              height: "100vh",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "#FAFAFA",
+            }}
+          >
+            <h1
+              style={{
+                fontSize: "48px",
+                color: "#863BFF",
+                marginBottom: "10px",
+              }}
+            >
+              404
+            </h1>
+            <h2 style={{ marginBottom: "20px" }}>Page Not Found</h2>
+            <p style={{ color: "#a1a1aa", marginBottom: "30px" }}>
+              The page you are looking for doesn't exist or has been moved.
+            </p>
+            <button
+              onClick={() => (window.location.href = "/dashboard")}
+              style={{ width: "auto" }}
+            >
+              Return to Dashboard
+            </button>
+          </div>
+        }
+      />
+    </Routes>
+  );
+}
+
+export default App;
+</file>
+
+<file path="client/src/index.css">
+body {
+  background-color: #0a0a0b;
+  margin: 0;
+  padding: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M40 40H0V0' fill='none' stroke='%2327272A' stroke-width='1' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+}
+h1,
+h2,
+h3,
+h4, label, span, div, input, textarea {
+  font-family: poppins;
+  color: #fafafa;
+}
+p {
+  font-family: inter;
+  color: #fafafa;
+}
+.input {
+  font-family: poppins;
+  font-size: 1rem;
+  padding: 6px 8px;
+  height: 40px;
+  color: #fafafa;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #0a0a0b;
+  border: 1px solid #27272a;
+  border-radius: 6px;
+  resize: none;
+  transition: all 0.2s ease;
+  outline: none;
+}
+.input:focus {
+  box-shadow: 0 0 20px -5px #863BFF;
+  border: 1px solid #863BFF;
+}
+button {
+  background-color: #863BFF;
+    border-radius: 5px;
+    border: none;
+    color: #FAFAFA;
+    font-family: poppins;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 8px 12px;
+    width: 100%;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+button:hover {
+  transform: scale(1.005);
+  box-shadow: 0 0 20px -7px #863BFF;
+}
+button:active {
+  transform: scale(0.98);
+}
+.main {
+  display:flex;
+  min-height: 100vh;
+}
+.main-content {
+  flex: 1;
+  padding: 15px 25px;
+  overflow-y: auto;
+}
+</file>
+
+<file path="client/src/main.jsx">
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
+import App from "./App.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <BrowserRouter>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </BrowserRouter>
+  </StrictMode>,
+);
+</file>
+
+<file path="client/.env">
+VITE_API_URL=http://localhost:1234
+</file>
+
+<file path="client/.gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+</file>
+
+<file path="client/eslint.config.js">
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      globals: globals.browser,
+      parserOptions: { ecmaFeatures: { jsx: true } },
+    },
+  },
+])
+</file>
+
+<file path="client/index.html">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>client</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="client/package.json">
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "qrcode.react": "^4.2.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.18.0",
+    "recharts": "^3.9.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "vite": "^8.0.12",
+    "vite-plugin-svgr": "^5.2.0"
+  }
+}
+</file>
+
+<file path="client/README.md">
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+</file>
+
+<file path="client/vite.config.js">
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import svgr from 'vite-plugin-svgr'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [ react(),
+    svgr()
+  ],
+})
+</file>
+
+<file path="server/src/config/cloudinary.js">
+import { v2 as cloudinary } from "cloudinary";
+import dotenv from "dotenv"
+dotenv.config()
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+export default cloudinary;
+</file>
+
+<file path="server/src/controller/authController.js">
+import crypto from "crypto"
+import {pool} from "../db/index.js"
+import {Resend} from "resend"
+import dotenv from "dotenv"
+import { format } from "path"
+import jwt from "jsonwebtoken"
+dotenv.config()
+
+const sendOTP = async (req, res, next) => {
+    const { email } = req.body;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(401).json({message: "Enter an valid email."})
+    }
+    const expires_at = new Date(Date.now() + 5 * 60 * 1000); 
+    const randomDigits = crypto.randomInt(100000, 1000000).toString();
+    const result = await pool.query(
+        'INSERT INTO otps (code, email, expires_at) VALUES ($1, $2, $3)',
+        [ randomDigits, email, expires_at ]
+    );
+    console.log(randomDigits)
+    const resend = new Resend(process.env.RESEND_API_KEY)
+    await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: email,
+      subject: "Your feedback App OTP",
+      html: `<p>Your secure login code is: <strong>${randomDigits}</strong>. It will expire in 5 minutes. Don't share this code whith anyone.</p>`,
+    });
+    res.status(200).json({
+      message: "success, otp has been sent on your email.",
+    });
+}
+
+const verifyOTP = async (req, res, next) => {
+    const { email, code } = req.body; // accessing email and code.
+    if (!email || !code) { // checking does it there anything missing?
+        return res.status(401).json({ message: "Please enter email and code." })
+    }
+    // validating for email and code.
+    // email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(401).json({message: "Enter an valid email."})
+    }
+    // validating for code
+  const otpRegex = /^\d{6}$/;
+    if (!otpRegex.test(code) ) {
+        return res.status(401).json({message: "Enter an valid OTP code."})
+    }
+    // finding opt from the db.
+    const result = await pool.query(
+        'SELECT * FROM otps WHERE email = $1 AND code = $2',
+        [ email, code ]
+    )
+    if (result.rows.length === 0) { // if we can't get opt in db.
+        return res.status(401).json({ message: "Invalid email or code." })
+    }
+    const otpDetails = result.rows.at(-1) // got the latest otp
+    const currTime = Date.now()
+    if (currTime > otpDetails.expires_at) { // checking if it is expired. if yes kcick out the user.
+        await pool.query(
+            'DELETE FROM otps WHERE id = $1',
+            [ otpDetails.id ]
+        )
+        return res.status(401).json({ message: "Code has been expired." })
+    }
+    // if the otp is correct, delete from db.
+    await pool.query(
+        'DELETE FROM otps WHERE id = $1',
+        [otpDetails.id]
+    )
+    // cheking that if the userExsist by using email.
+    const userExsist = await pool.query(
+        'SELECT * FROM owners WHERE email = $1',
+        [email]
+    )
+    let user;
+    if (userExsist.rows.length === 0) { // if the user don't exsist we will add them in owners table.
+        const insertResult = await pool.query(
+            'INSERT INTO owners (email) VALUES ($1) RETURNING *',
+            [email]
+        )
+        user = insertResult.rows[0];
+    } else {
+        user = userExsist.rows[0]
+    }
+    // here the process is same for the user who is new and for the who is login for dashboard they will assinged a token we are creating token and sending it back to frontend so we can store in localStorge.
+    const userPayload = { 
+      id: user.id,
+      email: user.email,
+    };
+    const token = jwt.sign(userPayload, process.env.JWT_SECRET, {expiresIn: "7d"})
+    return res.status(200).json({message: "login successfull.", token: token})
+}
+
+export {sendOTP, verifyOTP};
+</file>
+
+<file path="server/src/controller/businessController.js">
+import { pool } from "../db/index.js";
+import stream from "stream";
+import cloudinary from "../config/cloudinary.js";
+
+// this is not an specific controller this is just a helper function.
+const uploadToCloudinary = (buffer) => {
+  return new Promise((resove, reject) => {
+    const uploadStream = cloudinary.uploader.upload_stream(
+      {
+        folder: "business_logos",
+        format: "webp",
+        transformation: [
+          { width: 300, height: 300, crop: "fill", gravity: "auto" },
+        ],
+      },
+      (error, result) => {
+        if (error) reject(error);
+        resove(result);
+      },
+    );
+    stream.Readable.from(buffer).pipe(uploadStream);
+  });
+};
+
+const validateBusinessName = (value) => {
+  const cleanedValue = value?.trim() || "";
+  const words = cleanedValue ? cleanedValue.split(/\s+/) : [];
+  const MAX_BUSINESS_NAME_LENGTH = 50;
+  const hasGiantWords = words.some((word) => word.length >= 20);
+  const isOnlyNumbers =
+    /^[\d\s\W]+$/.test(cleanedValue) && cleanedValue.length > 0;
+  const hasDigits = /\d/.test(cleanedValue);
+  const hasSpamRepetition = /(.)\1{9,}/.test(cleanedValue);
+  const isLengthValid = cleanedValue.length <= MAX_BUSINESS_NAME_LENGTH;
+
+  return (
+    cleanedValue.length > 0 &&
+    !hasGiantWords &&
+    !isOnlyNumbers &&
+    !hasDigits &&
+    !hasSpamRepetition &&
+    isLengthValid &&
+    /^[\p{L}\s'-]+$/u.test(cleanedValue)
+  );
+};
+
+const setProfile = async (req, res, next) => {
+  try {
+    const { name } = req.body; // accessing the name
+    const cleanedName = name?.trim();
+    if (!validateBusinessName(cleanedName)) {
+      return res.status(400).json({
+        message:
+          "Enter a valid business name using only letters, spaces, apostrophes, or hyphens, and keep it under 50 characters.",
+      });
+    }
+    const allowedImageTypes = ["image/jpeg", "image/png", "image/jpg"];
+    if (!req.file) {
+      return res.status(400).json({ message: "Please upload a logo image." });
+    }
+    if (!allowedImageTypes.includes(req.file.mimetype)) {
+      return res
+        .status(400)
+        .json({ message: "Please upload a valid JPG or PNG logo." });
+    }
+    let logoUrl = null;
+    if (req.file) {
+      // checking if the file exsist if yes then start the process to upload in cloudinary.
+      const result = await uploadToCloudinary(req.file.buffer);
+      logoUrl = result.secure_url; // this is the url that the cloudinary returned of that uploaded logo.
+    }
+    // this means we got all the things name, prompt, and that logo url which is live.
+    const dbResult = await pool.query(
+      "INSERT INTO businesses (owner_id, name, logo_url) VALUES ($1, $2, $3)",
+      [req.user.id, cleanedName, logoUrl],
+    );
+    if (dbResult.rowCount === 1) {
+      // if got successfully saved then send this back.
+      return res.status(200).json({
+        message: "Profile data saved sucessfully",
+      });
+    } else {
+      // if failed due to some reason then execute this.
+      return res.status(500).json({
+        message: "Failed to save profile data in DB.",
+      });
+    }
+  } catch (error) {
+    return res.status(500).json({
+      message: "Failed to save profile data in DB.",
+    });
+  }
+};
+const updateProfile = async (req, res, next) => {
+  try {
+    const { updatedName } = req.body;
+    const cleanedName = updatedName?.trim();
+    if (!validateBusinessName(cleanedName)) {
+      return res.status(400).json({
+        message:
+          "Enter a valid business name using only letters, spaces, apostrophes, or hyphens, and keep it under 50 characters.",
+      });
+    }
+
+    const allowedImageTypes = ["image/jpeg", "image/png", "image/jpg"];
+    if (req.file && !allowedImageTypes.includes(req.file.mimetype)) {
+      return res
+        .status(400)
+        .json({ message: "Please upload a valid JPG or PNG logo." });
+    }
+
+    let result;
+    if (req.file) {
+      const cloudinaryResult = await uploadToCloudinary(req.file.buffer);
+      const newLogoUrl = cloudinaryResult.secure_url;
+      result = await pool.query(
+        `UPDATE businesses SET name = $1, logo_url = $2 WHERE owner_id = $3`,
+        [cleanedName, newLogoUrl, req.user.id],
+      );
+    } else {
+      result = await pool.query(
+        `UPDATE businesses SET name = $1 WHERE owner_id = $2`,
+        [cleanedName, req.user.id],
+      );
+    }
+
+    if (result.rowCount === 1) {
+      return res.status(200).json({
+        message: "Profile data updated sucessfully",
+      });
+    }
+
+    return res.status(404).json({
+      message: "No business profile found to update.",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Failed to update profile data in DB.",
+    });
+  }
+};
+const verifyProfile = async (req, res, next) => {
+  const result = await pool.query(
+    `SELECT * FROM businesses WHERE owner_id = $1 LIMIT 1`,
+    [req.user.id],
+  );
+  if (result.rows.length === 1) {
+    res.status(200).json({ message: `User already has the profile.` });
+  } else {
+    res.status(401).json({ message: "Redirect to setup form" });
+  }
+};
+
+export { setProfile, verifyProfile, updateProfile };
+</file>
+
+<file path="server/src/controller/feedbackController.js">
+import { pool } from "../db/index.js";
+import { findIP } from "../utils/ipAddress.js";
+
+const validateFormData = (FormData) => {
+  const isRatingValid = FormData.starRating > 0 && FormData.starRating <= 5;
+  let isMessageValid = true;
+  if (FormData.feedbackPrompt.trim().length > 0) {
+    const wordsArr = FormData.feedbackPrompt.trim().split(/\s+/);
+    // Rule A: Kills "asdfghjklqwertyuiopzxcvbnm"
+    const hasGiantWords = wordsArr.some((word) => word.length > 25);
+
+    // Rule B: Kills "56723048569347856237845693675378456"
+    const isOnlyNumbers =
+      /^[\d\s\W]+$/.test(FormData.feedbackPrompt) && FormData.feedbackPrompt.trim().length > 5;
+
+    // Rule C: Kills "fffffffffffff" or "!!!!!!!!!!!"
+    const hasSpamRepetition = /(.)\1{9,}/.test(FormData.feedbackPrompt);
+    if (hasGiantWords || isOnlyNumbers || hasSpamRepetition) {
+      isMessageValid = false;
+    }
+  }
+  // validating name.
+  const isNameValid =
+    FormData.userName.trim() === "" || /^[\p{L}\s'-]+$/u.test(FormData.userName);
+  // validating email.
+  const isEmailValid =
+    FormData.userEmail.trim() === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(FormData.userEmail);
+  return    isRatingValid && isMessageValid && isNameValid && isEmailValid;
+  
+}
+
+// this is that controller from where we will fetch all the data for the feedback feed.
+const getFeedbackFeed = async (req, res, next) => {
+  const { range } = req.query;
+  let timestamp = "";
+  console.log(range)
+  if (range && range !== "all-time") {
+    timestamp = `and feedback.created_at >= now() - interval '${range.replace("-", " ")}'`;
+  }
+  if (req.user) {
+    const result = await pool.query(
+      `select feedback.* from feedback
+      join businesses on feedback.business_id = businesses.id
+      where businesses.owner_id = $1 ${timestamp}
+      order by feedback.created_at desc`,
+      [req.user.id],
+    );
+    const feedbacks = result.rows;
+    if (feedbacks.length === 0) {
+      res.status(200).json({ feedbacks: []});
+      return;
+    } else {
+      res.status(200).json({ feedbacks });
+      return;
+    }
+  }
+};
+
+// this is the most biggest/complex/important controller.
+const getBusinessData = async (req, res, next) => {
+  if (req.user) {
+    // basic business details. like logo url and name.
+    const result = await pool.query(
+      "SELECT * FROM businesses WHERE owner_id = $1 LIMIT 1",
+      [req.user.id],
+    );
+    if (result.rows.length === 0) {
+      return res.status(401).json({ message: "Redirect to setup form" });
+    }
+    let businessData = result.rows[0];
+    if (req.query.data === "sidebarData") {
+      return res.status(200).json({
+        businessName: businessData.name,
+        logo_url: businessData.logo_url,
+      });
+    }
+    // Collecting data about total feedback, average rating and NPS.
+    const feedbackData = await pool.query(
+      `
+      SELECT 
+  COUNT(*) AS total_responses,
+  COALESCE(ROUND(AVG(rating), 1), 0) AS average_rating,
+  SUM(CASE WHEN rating = 5 THEN 1 ELSE 0 END) AS total_promoters,
+  SUM(CASE WHEN rating <= 3 THEN 1 ELSE 0 END) AS total_detractors
+  FROM feedback 
+  WHERE business_id = $1;
+  `,
+      [businessData.id],
+    );
+    const trendLineData = await pool.query(
+      `
+      SELECT
+      TO_CHAR(created_at, 'YYYY-MM-DD') AS date,
+      ROUND(AVG(rating), 1) AS average_rating
+      FROM feedback WHERE business_id = $1
+      and created_at >= now() - interval '30 days'
+      GROUP by date
+      order by date ASC
+      `,
+      [businessData.id],
+    );
+
+    const shortcut = feedbackData.rows[0];
+    const totalResponses = shortcut.total_responses;
+    const averageRating = shortcut.average_rating;
+    // logic for the nps
+    const promoters = shortcut.total_promoters;
+    const detractors = shortcut.total_detractors;
+    let npsScore = 0;
+    if (totalResponses > 0) {
+      const percentPromoters = (promoters / totalResponses) * 100;
+      const percentDetractors = (detractors / totalResponses) * 100;
+      npsScore = Math.round(percentPromoters - percentDetractors);
+    }
+    // now for 5 latest feedback.
+    const latestFeedback = await pool.query(
+      "SELECT * FROM feedback WHERE business_id = $1 ORDER BY created_at DESC LIMIT 5",
+      [businessData.id],
+    );
+    res.status(200).json({
+      businessName: businessData.name,
+      logo_url: businessData.logo_url,
+      feedbackUrl: `http://${findIP()}:5173/feedbackForm/${businessData.id}`,
+      totalResponses,
+      averageRating,
+      npsScore,
+      latestFeedback: latestFeedback.rows,
+      trendLineData: trendLineData.rows,
+    });
+  }
+};
+// this is used when a random customer scans a qr code and gets the form to to fill. There the business name, logoUrl gets from here.
+const getFormData = async (req, res, next) => {
+  let { id } = req.params;
+  const result = await pool.query(
+    "SELECT * FROM businesses WHERE id = $1 LIMIT 1",
+    [id],
+  );
+
+  if (result.rowCount === 1) {
+    res.status(200).json({
+      businessName: result.rows[0].name,
+      prompt: result.rows[0].prompt_message,
+      logo_url: result.rows[0].logo_url,
+    });
+  } else {
+    res.status(200).json({
+      message: `Hey, something went wrong.`,
+    });
+  }
+};
+// when a random user clicks submit form this gets execute and post form data in db.
+const postFormData = async (req, res, next) => {
+  let feedbackData = req.body;
+  if (!validateFormData(feedbackData)) return res.status(400).json({message: `Invalid Form Data`})
+  let result;
+  if (feedbackData.isAnonymous) {
+    result = await pool.query(
+      `INSERT INTO feedback (business_id, rating, message, is_anonymous) VALUES ($1, $2, $3, $4)`,
+      [
+        feedbackData.business_id,
+        feedbackData.starRating,
+        feedbackData.feedbackPrompt,
+        feedbackData.isAnonymous,
+      ],
+    );
+  } else {
+    result = await pool.query(
+      `INSERT INTO feedback (business_id, rating, message, is_anonymous, customer_name, customer_email) VALUES ($1, $2, $3, $4, $5, $6)`,
+      [
+        feedbackData.business_id,
+        feedbackData.starRating,
+        feedbackData.feedbackPrompt,
+        feedbackData.isAnonymous,
+        feedbackData.userName,
+        feedbackData.userEmail,
+      ],
+    );
+  }
+  res.status(200).json(`Hey, I recived the data.`);
+};
+
+export { getBusinessData, getFormData, postFormData, getFeedbackFeed };
+</file>
+
+<file path="server/src/db/index.js">
+import pkg from "pg";
+import dotenv from "dotenv";
+
+dotenv.config();
+const { Pool } = pkg;
+
+
+// creating new connection. means this is just a set-up we are saying node.js that if we say to connect use this credentials and connect with postgres
+const pool = new Pool({
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME
+})
+
+// adding a sensor that whenever my node.js connects with the postgres this function executes.
+pool.on("connect", () => {
+    console.log(`Haha, connected to posgres.`)
+})
+pool.on("error", (error) => {
+    console.error(`Hey, something went wrong ${error}`)
+})
+
+export { pool };
+</file>
+
+<file path="server/src/db/schema.sql">
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE owners (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    email VARCHAR(255) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE otps (
+    id SERIAL PRIMARY KEY,
+    code VARCHAR(6) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    expires_at TIMESTAMP NOT NULL
+);
+
+CREATE TABLE businesses (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(), 
+    owner_id UUID NOT NULL REFERENCES owners(id) ON DELETE CASCADE,
+    name VARCHAR(255) NOT NULL,
+    prompt_message VARCHAR(500) DEFAULT 'How was your experience with us today?',
+    logo_url VARCHAR(1000),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE feedback ( 
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    business_id UUID NOT NULL REFERENCES businesses(id) ON DELETE CASCADE,
+    rating INT NOT NULL CHECK (rating >=1 AND rating <=5),
+    message TEXT, -- TEXT is used because we don't want to limit user from explaining their frustation in detail.
+    is_anonymous BOOLEAN DEFAULT TRUE,
+    customer_name VARCHAR(100),
+    customer_email VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+</file>
+
+<file path="server/src/middleware/authMiddleware.js">
+import jwt from "jsonwebtoken"
+import dotenv from "dotenv";
+dotenv.config()
+
+const authenticate = (req, res, next) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+        return res.status(401).json({ message: "Token not found" });
+    }
+    const token  = authHeader.split(" ")[ 1 ]
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET) // verifying that if the token is real.
+        req.user = decoded
+        next()
+    } catch (error) {
+        return res.status(401).json({ message: "Token is invalid/expired" });
+    }
+}
+
+export default authenticate;
+</file>
+
+<file path="server/src/routes/authRoutes.js">
+import express from "express";
+import { sendOTP, verifyOTP } from "../controller/authController.js";
+import asyncWrap from "../utils/asyncWrap.js";
+const router = express.Router();
+
+router.post("/send", asyncWrap(sendOTP));
+router.post("/verify", asyncWrap(verifyOTP));
+
+export default router;
+</file>
+
+<file path="server/src/routes/businessRoute.js">
+import {
+  setProfile,
+  updateProfile,
+  verifyProfile,
+} from "../controller/businessController.js";
+import express from "express";
+import authenticate from "../middleware/authMiddleware.js";
+import multer from "multer";
+import asyncWrap from "../utils/asyncWrap.js";
+
+const storage = multer.memoryStorage(); // telling multer to store files in server's RAM.
+const upload = multer({
+  storage: storage,
+  limits: {
+    fileSize: 5 * 1024 * 1024, // 5MB
+  },
+}); // initializing multer. and setting limit to upload max 5mb image.
+
+const router = express.Router();
+
+router.use(authenticate);
+
+router.post("/", upload.single("logo"), asyncWrap(setProfile));
+router.put("/", upload.single("newLogo"), asyncWrap(updateProfile));
+router.get("/", asyncWrap(verifyProfile));
+
+export default router;
+</file>
+
+<file path="server/src/routes/feedbackRoutes.js">
+import express from "express";
+import {
+  getBusinessData,
+  getFeedbackFeed,
+  getFormData,
+  postFormData,
+} from "../controller/feedbackController.js";
+import authenticate from "../middleware/authMiddleware.js";
+import asyncWrap from "../utils/asyncWrap.js";
+
+const router = express.Router();
+
+router.get("/", authenticate, asyncWrap(getBusinessData));
+router.get("/feed", authenticate, asyncWrap(getFeedbackFeed));
+router.get("/:id", asyncWrap(getFormData));
+router.post("/:id", asyncWrap(postFormData));
+
+export default router;
+</file>
+
+<file path="server/src/utils/asyncWrap.js">
+const asyncWrap = (fn) => {
+  return (req, res, next) => {
+    Promise.resolve()
+      .then(() => fn(req, res, next))
+      .catch(next);
+  };
+};
+
+export default asyncWrap;
+</file>
+
+<file path="server/src/utils/ipAddress.js">
+import os from "os";
+
+function findIP() {
+  const interfaces = os.networkInterfaces();
+  for (const devName in interfaces) {
+    const iface = interfaces[devName];
+    for (let i = 0; i < iface.length; i++) {
+      const idk = iface[i];
+      if (
+        idk.family === "IPv4" &&
+        idk.address != "127.0.0.1" &&
+        !idk.internal
+      ) {
+        return idk.address;
+      }
+    }
+    return "0.0.0.0";
+  }
+}
+
+export { findIP };
+</file>
+
+<file path="server/src/app.js">
+import { pool } from "./db/index.js";
+import cors from "cors";
+import express from "express";
+import dotenv from "dotenv";
+import authRouter from "./routes/authRoutes.js"
+import businessRouter from "./routes/businessRoute.js"
+import feedbackRouter from './routes/feedbackRoutes.js'
+import { findIP } from "./utils/ipAddress.js";
+
+dotenv.config()
+const app = express();
+
+
+// middlewares
+app.use(cors())
+app.use(express.json()) // this will help express to understand how to read json objects.
+app.use("/api/otp", authRouter)
+app.use("/api/businesses", businessRouter)
+app.use("/api/feedback", feedbackRouter)
+
+app.use((err, req, res, next) => {
+    console.error("🔥 CRITICAL SERVER ERROR:", err.message);
+    
+    res.status(500).json({
+        status: "error",
+        message: "Something went wrong on our end. Please try again later."
+    });
+});
+
+app.listen(process.env.PORT, () => {
+    console.log(`Hey, the server is alive.`)
+    console.log(`Test your phone at: http://${findIP()}:1234/`)
+});
+</file>
+
+<file path="server/.env">
+# Server Config
+PORT=1234
+
+# Database Config
+DB_USER=postgres
+DB_PASSWORD="postgres!@#$"
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=feedback_saas
+
+# resend
+RESEND_API_KEY="re_j2tXDTru_NExEeUDawoojkJnutA8eZnHk"
+
+# JWT
+JWT_SECRET="iemi%hw4be#M2j2Y#pro#Sx!wjlJx3b/edcdot"
+
+# Cloudinary
+CLOUDINARY_CLOUD_NAME="da0uicinl"
+CLOUDINARY_API_KEY=339177183625862
+CLOUDINARY_API_SECRET=5CzbgtXOv7UXkb9sdQZyED3DHcE
+</file>
+
+<file path="server/package.json">
+{
+  "name": "feedback-saas-backend",
+  "version": "1.0.0",
+  "description": "Backend API for B2B Feedback Platform",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "cloudinary": "^2.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.2.0",
+    "pg": "^8.11.5",
+    "resend": "^3.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
+</file>
+
+<file path="README.md">
+
+</file>
+
+</files>

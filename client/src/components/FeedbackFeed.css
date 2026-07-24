@@ -1,0 +1,160 @@
+/* --- MAIN CONTENT AREA --- */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #fafafa;
+  min-height: 100vh;
+  font-family:
+    "poppins", "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.page-subtitle {
+  color: #a1a1aa;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* --- FILTERS SECTION --- */
+.filters-bar {
+  background-color: #141417;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-input,
+.filter-select {
+  background-color: #0a0a0b;
+  border: 1px solid #27272a;
+  color: #fafafa;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.filter-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  border-color: #863bff;
+  box-shadow: 0 0 0 3px rgba(134, 59, 255, 0.15);
+}
+
+/* --- FEEDBACK LIST --- */
+.feedback-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.feedback-card {
+  background-color: #141417;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 24px;
+  /* transition: all 0.2s ease; */
+}
+
+.feedback-card:hover {
+  border-color: #863bff;
+  box-shadow: 0 0 15px rgba(134, 59, 255, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.customer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.customer-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #27272a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #fafafa;
+}
+
+.customer-details h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.customer-details p {
+  color: #a1a1aa;
+  font-size: 12px;
+  margin: 0;
+}
+
+.rating-stars,
+.feedbackFeedStars {
+  display: flex;
+  gap: 2px;
+}
+
+.star,
+.feedbackFeedStars svg {
+  width: 18px;
+  height: 18px;
+}
+
+.star.filled {
+  fill: #863bff;
+  stroke: #863bff;
+}
+
+.star.empty {
+  fill: transparent;
+  stroke: #27272a;
+  stroke-width: 2px;
+}
+
+.feedback-message {
+  color: #d4d4d8;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  /* this to solve that hahahahaha word problem */
+    overflow-wrap: break-word ;
+    word-break: break-word;
+  /* ... feature */
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

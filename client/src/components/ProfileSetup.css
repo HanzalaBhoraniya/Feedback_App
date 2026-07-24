@@ -1,0 +1,159 @@
+#setupFormWrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#firstThing {
+    margin: 0;
+    font-size: 40px;
+    text-align: center;
+}
+#businessProfile {
+    margin: 0;
+    text-align: center;
+    opacity: 0.8;
+}
+#setupForm {
+    width: 500px;
+    /* height: 600px; */
+    background-color: #141417;
+    border: 1px solid #863BFF;
+    border-radius: 10px;
+    box-shadow: 0 0 20px -2px #863BFF;
+}
+#formHero {
+    border-bottom: 1px solid #27272A;
+    height: 121px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #0a0a0b;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    background-image: radial-gradient(circle 120px at 50% -100%, rgba(134, 59, 255, 0.6) 0%, transparent 250%);
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+#sameBtn {
+    align-items: center;
+}
+#form {
+    padding: 1rem 2rem 1.5rem 2rem;
+    height: auto;
+}
+#companyLogoInput {
+    display: none;
+}
+#companyLogoLabel {
+    background-color: #0a0a0b;
+    height: 150px;
+    border: none;
+    overflow: hidden;
+    position: relative;
+  transition: all 0.2s ease;
+  
+}
+#companyLogoLabel:hover {
+  box-shadow: 0 0 20px -5px #863BFF;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23863BFF' stroke-width='3' stroke-dasharray='6%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+#logoUpload * {
+    transition: all 0.2s ease;
+}
+#companyLogoLabel:hover #logoUpload span {
+    color: #863BFF;
+}
+#companyLogoLabel:hover #logoUpload svg {
+    stroke: #863BFF;
+}
+.dotted-border {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%233e403f' stroke-width='3' stroke-dasharray='6%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+#companyLogoWrapper p {
+    margin: 0 0 7px 0;
+}
+label {
+    margin-bottom: 3px;
+}
+#logoUpload * {
+    opacity: 0.7;
+}
+#companyLogoLabel span {
+    font-size: 14px;
+}
+#rightArrowIcon {
+    height: 25px;
+    width: 25px;
+    fill: #FAFAFA;
+    margin: 0;
+    box-sizing: border-box;
+}
+#saveBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+#promptInput {
+    height: 80px;
+}
+#charCount {
+    font-size: 12px;
+    align-self: flex-end;
+    margin-top: 3px;
+}
+#promptWrapper {
+    margin-bottom: 0;
+}
+.logoImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+    inset: 0;
+    position: absolute;
+}
+#logoUpload {
+    transform: translateY(-5px);
+}
+#logoUploaded {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: row;
+}
+#logoImgWrapper {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    /* background-color: yellow; */
+    /* border: 2px solid red; */
+    overflow: hidden;
+}
+#logoImgWrapper img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 10;
+}
+#logoInfo {
+    margin: 0;
+    font-weight: 600;
+    opacity: 0.8;
+}
+#ratio {
+    font-size: 12px;
+    opacity: 0.9;
+}
