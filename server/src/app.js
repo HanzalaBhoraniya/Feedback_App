@@ -12,7 +12,14 @@ const app = express();
 
 
 // middlewares
-app.use(cors())
+app.use(cors({
+    origin: [
+        "http://localhost:5173", // Allows you to still test on your laptop
+        "https://feedback-app-tan-three.vercel.app" // Allows your live Vercel site!
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true // means it will also allow to send tokens and all.
+}));
 app.use(express.json()) // this will help express to understand how to read json objects.
 app.use("/api/otp", authRouter)
 app.use("/api/businesses", businessRouter)
