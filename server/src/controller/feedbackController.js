@@ -123,7 +123,7 @@ const getBusinessData = async (req, res, next) => {
     res.status(200).json({
       businessName: businessData.name,
       logo_url: businessData.logo_url,
-      feedbackUrl: `http://${process.env.FRONTEND_URL}:5173/feedbackForm/${businessData.id}`,
+      feedbackUrl: `http://${process.env.FRONTEND_URL}/feedbackForm/${businessData.id}`,
       totalResponses,
       averageRating,
       npsScore,
