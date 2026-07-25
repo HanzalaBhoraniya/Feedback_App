@@ -13,6 +13,7 @@ function FeedbackForm() {
   // Data States
   const [logoUrl, setLogoUrl] = useState("");
   const [businessName, setBusinessName] = useState("");
+  const [promptMessage, setPromptMessage] = useState("")
 
   // NEW: Error and Loading Armor
   const [error, setError] = useState(null);
@@ -34,6 +35,7 @@ function FeedbackForm() {
         if (result.ok && data.businessName) {
           setLogoUrl(data.logo_url);
           setBusinessName(data.businessName);
+          setPromptMessage(data.prompt);
         } else {
           // If the ID is wrong, the backend sends a message. We catch it here!
           setError(data.message || "Business profile not found in database.");
