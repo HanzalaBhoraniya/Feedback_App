@@ -1,35 +1,55 @@
 import crypto from "crypto"
 import {pool} from "../db/index.js"
-import {Resend} from "resend"
-import dotenv from "dotenv"
-import { format } from "path"
-import jwt from "jsonwebtoken"
-dotenv.config()
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+import { format } from "path";
+import jwt from "jsonwebtoken";
+dotenv.config();
 
 const sendOTP = async (req, res, next) => {
-    const { email } = req.body;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        return res.status(401).json({message: "Enter an valid email."})
-    }
-    const expires_at = new Date(Date.now() + 5 * 60 * 1000); 
-    const randomDigits = crypto.randomInt(100000, 1000000).toString();
-    const result = await pool.query(
-        'INSERT INTO otps (code, email, expires_at) VALUES ($1, $2, $3)',
-        [ randomDigits, email, expires_at ]
-    );
-    console.log(randomDigits)
-    const resend = new Resend(process.env.RESEND_API_KEY)
-    await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: email,
-      subject: "Your feedback App OTP",
-      html: `<p>Your secure login code is: <strong>${randomDigits}</strong>. It will expire in 5 minutes. Don't share this code whith anyone.</p>`,
-    });
-    res.status(200).json({
-      message: "success, otp has been sent on your email.",
-    });
-}
+  const { email } = req.body;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(401).json({ message: "Enter an valid email." });
+  }
+  const expires_at = new Date(Date.now() + 5 * 60 * 1000);
+  const randomDigits = crypto.randomInt(100000, 1000000).toString();
+  const result = await pool.query(
+    "INSERT INTO otps (code, email, expires_at) VALUES ($1, $2, $3)",
+    [randomDigits, email, expires_at],
+  );
+  console.log(randomDigits);
+  const transporter = nodemailer.createTransport({
+    // Hey Nodemailer, build me a delivery truck that connects to Gmail, and use my secret email and password to log in.
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+  await transporter.sendMail({
+    // Hey delivery truck, wait right here while you take this specific HTML message, label it from 'Feedback App', and drop it into the user's inbox.
+    from: `"Feedback App" <${process.env.EMAIL_USER}>`,
+    to: email,
+    subject: "Your Feedback App OTP",
+    html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+          <h2 style="color: #111;">Login to Feedback App</h2>
+          <p>Here is your secure One-Time Password (OTP) to access your dashboard:</p>
+          <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0;">
+            <h1 style="font-size: 36px; letter-spacing: 8px; color: #6d28d9; margin: 0;">${randomDigits}</h1>
+          </div>
+          <p style="font-size: 14px; color: #555;">This code will expire in exactly <strong>5 minutes</strong>. For your security, please do not share this code with anyone.</p>
+          <p style="font-size: 14px; color: #555;">If you did not request this code, you can safely ignore this email.</p>
+          <br>
+          <p>Best,<br><strong>The Feedback App Team</strong></p>
+        </div>
+      `,
+  });
+  res.status(200).json({
+    message: "success, otp has been sent on your email.",
+  });
+};
 
 const verifyOTP = async (req, res, next) => {
     const { email, code } = req.body; // accessing email and code.
