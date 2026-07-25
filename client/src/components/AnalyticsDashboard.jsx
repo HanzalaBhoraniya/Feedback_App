@@ -143,7 +143,12 @@ function AnalyticsDashboard() {
         <div className="chart-card line-chart">
           <h3>SENTIMENT TREND OVER TIME</h3>
           <div className="placeholder-chart">
-            <TrendData data={businessData.trendLineData} />
+            {businessData.trendLineData.length === 0 ? (
+            <span style={{ color: "#a1a1aa" }}>Not enough data to show trends yet.</span>  
+            ) : (
+              <TrendData data={businessData.trendLineData} />
+            )
+            }
           </div>
         </div>
       </section>
@@ -161,31 +166,44 @@ function AnalyticsDashboard() {
             </tr>
           </thead>
           <tbody>
-            {businessData.latestFeedback.map((e, i) => {
-              const timeStamp = new Date(e.created_at);
-              return (
-                <tr key={i}>
-                  {/* Added .nameCell to protect against long names */}
-                  <td
-                    className="nameCell"
-                    title={e.customer_name || "Anonymous"}
-                  >
-                    {e.customer_name || "Anonymous"}
-                  </td>
-
-                  <td>{renderStars(e.rating, "ratingStarsWrapper")}</td>
-
-                  {/* Wrapped the message in a div so the clamp works perfectly */}
-                  <td>
-                    <div className="messageTable" title={e.message}>
-                      {e.message}
-                    </div>
-                  </td>
-
-                  <td>{formatTime(timeStamp)}</td>
-                </tr>
-              );
-            })}
+            {
+              businessData.latestFeedback.length === 0 ? (
+                <tr>
+              <td 
+                colSpan="4" 
+                style={{ textAlign: "center", padding: "40px 0", color: "#a1a1aa" }}
+              >
+                No feedback received yet. Share your QR code or link to get started!
+              </td>
+            </tr>
+              ) : (
+                businessData.latestFeedback.map((e, i) => {
+                  const timeStamp = new Date(e.created_at);
+                  return (
+                    <tr key={i}>
+                      {/* Added .nameCell to protect against long names */}
+                      <td
+                        className="nameCell"
+                        title={e.customer_name || "Anonymous"}
+                      >
+                        {e.customer_name || "Anonymous"}
+                      </td>
+    
+                      <td>{renderStars(e.rating, "ratingStarsWrapper")}</td>
+    
+                      {/* Wrapped the message in a div so the clamp works perfectly */}
+                      <td>
+                        <div className="messageTable" title={e.message}>
+                          {e.message}
+                        </div>
+                      </td>
+    
+                      <td>{formatTime(timeStamp)}</td>
+                    </tr>
+                  );
+                })
+              )
+            }
           </tbody>
         </table>
       </section>

@@ -17,7 +17,7 @@ const uploadToCloudinary = (buffer) => {
         if (error) reject(error);
         resove(result);
       },
-    );
+k    );
     stream.Readable.from(buffer).pipe(uploadStream);
   });
 };
@@ -93,9 +93,9 @@ const setProfile = async (req, res, next) => {
 };
 const updateProfile = async (req, res, next) => {
   try {
-    const { updatedName } = req.body;
-    const cleanedName = updatedName?.trim();
-    if (!validateBusinessName(cleanedName)) {
+    const { updatedName } = req.body; // accessing updated from name from the req.body.
+    const cleanedName = updatedName?.trim(); // removing extra spaces
+    if (!validateBusinessName(cleanedName)) { // checking that does business name is valid.
       return res.status(400).json({
         message:
           "Enter a valid business name using only letters, spaces, apostrophes, or hyphens, and keep it under 50 characters.",
@@ -103,21 +103,21 @@ const updateProfile = async (req, res, next) => {
     }
 
     const allowedImageTypes = ["image/jpeg", "image/png", "image/jpg"];
-    if (req.file && !allowedImageTypes.includes(req.file.mimetype)) {
+    if (req.file && !allowedImageTypes.includes(req.file.mimetype)) { // checking does uploaded image has valid file type.
       return res
         .status(400)
         .json({ message: "Please upload a valid JPG or PNG logo." });
     }
 
     let result;
-    if (req.file) {
+    if (req.file) { // they also uploaded new logo then update both logo and the name.
       const cloudinaryResult = await uploadToCloudinary(req.file.buffer);
       const newLogoUrl = cloudinaryResult.secure_url;
       result = await pool.query(
         `UPDATE businesses SET name = $1, logo_url = $2 WHERE owner_id = $3`,
         [cleanedName, newLogoUrl, req.user.id],
       );
-    } else {
+    } else { // else just update the name.
       result = await pool.query(
         `UPDATE businesses SET name = $1 WHERE owner_id = $2`,
         [cleanedName, req.user.id],
@@ -129,7 +129,6 @@ const updateProfile = async (req, res, next) => {
         message: "Profile data updated sucessfully",
       });
     }
-
     return res.status(404).json({
       message: "No business profile found to update.",
     });

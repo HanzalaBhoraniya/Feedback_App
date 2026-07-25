@@ -1,5 +1,8 @@
+import dotenv from 'dotenv'
 import { pool } from "../db/index.js";
 import { findIP } from "../utils/ipAddress.js";
+
+dotenv.config();
 
 const validateFormData = (FormData) => {
   const isRatingValid = FormData.starRating > 0 && FormData.starRating <= 5;
@@ -120,7 +123,7 @@ const getBusinessData = async (req, res, next) => {
     res.status(200).json({
       businessName: businessData.name,
       logo_url: businessData.logo_url,
-      feedbackUrl: `http://${findIP()}:5173/feedbackForm/${businessData.id}`,
+      feedbackUrl: `http://${process.env.FRONTEND_URL}:5173/feedbackForm/${businessData.id}`,
       totalResponses,
       averageRating,
       npsScore,

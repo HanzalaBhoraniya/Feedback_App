@@ -89,8 +89,8 @@ function DashboardLayout() {
   }
   return (
     <div className="main">
-      <Sidebar />
-      <Outlet context={{ formatTime, renderStars, nameLogo }} />
+      <Sidebar  nameLogo={nameLogo}/>
+      <Outlet context={{ formatTime, renderStars, nameLogo, setNameLogo }} />
     </div>
   );
 }

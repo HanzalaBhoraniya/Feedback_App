@@ -2,11 +2,12 @@ import "./Sidebar.css";
 import DashboardIcon from "../assets/layout-dashboard.svg?react";
 import FeedbackIcon from "../assets/messages-square.svg?react";
 import SettingsIcon from "../assets/settings.svg?react";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import API_URL from "../utils/api";
+import { authContext } from "../context/AuthContext";
 
-function Sidebar({ logo_url, businessName }) {
+function Sidebar({ nameLogo }) {
   const [sidebarData, setSidebarData] = useState(null);
   useEffect(() => {
     async function compulsion() {
@@ -21,7 +22,7 @@ function Sidebar({ logo_url, businessName }) {
     }
     compulsion();
   }, []);
-  if (!sidebarData)
+  if (!nameLogo || !nameLogo.businessName || !nameLogo.logo_url)
     return (
       <div
         className="sidebar"
@@ -47,22 +48,22 @@ function Sidebar({ logo_url, businessName }) {
   return (
     <aside className="sidebar">
       <div className="brand">
-        <img src={sidebarData.logo_url} alt="Logo" className="nav-logo" />
-        <h2>{sidebarData.businessName}</h2>
+        <img src={nameLogo.logo_url} alt="Logo" className="nav-logo" />
+        <h2>{nameLogo.businessName}</h2>
       </div>
       <nav className="nav-menu">
-        <Link className="navItemWrapper" to="/dashboard">
+        <NavLink className="navItemWrapper" to="/dashboard">
           <DashboardIcon className="dashboardIcon navIcon" />
           <span className="nav-item">Dashboard</span>
-        </Link>
-        <Link className="navItemWrapper" to="/feedback">
+        </NavLink>
+        <NavLink className="navItemWrapper" to="/feedback">
           <FeedbackIcon className="feedbackIcon navIcon" />
           <span className="nav-item">Feedback</span>
-        </Link>
-        <Link className="navItemWrapper" to="/settings">
+        </NavLink>
+        <NavLink className="navItemWrapper" to="/settings">
           <SettingsIcon className="settingIcon navIcon" />
           <span className="nav-item">Settings</span>
-        </Link>
+        </NavLink>
       </nav>
     </aside>
   );

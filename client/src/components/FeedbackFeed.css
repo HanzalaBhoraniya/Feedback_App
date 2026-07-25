@@ -1,12 +1,12 @@
 /* --- MAIN CONTENT AREA --- */
-.main-content {
+.feedback-feed-container {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  color: #fafafa;
-  min-height: 100vh;
-  font-family:
-    "poppins", "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* color: #fafafa; */
+  /* min-height: 100vh; */
+  /* font-family:
+    "poppins", "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
 }
 
 .page-header {

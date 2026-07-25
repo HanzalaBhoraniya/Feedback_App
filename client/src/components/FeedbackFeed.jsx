@@ -84,7 +84,7 @@ function FeedbackFeed() {
         </h2>
       </div>
     );
-    i;
+    ;
   }
   const filteredArr = feedbacks
     .filter((e) => {
@@ -107,7 +107,7 @@ function FeedbackFeed() {
       );
     });
   return (
-    <main className="main-content">
+    <main className="main-content feedback-feed-container">
       {/* Header */}
       <header className="page-header">
         <div>

@@ -14,7 +14,7 @@ function Settings() {
   const [originalName, setOriginalName] = useState("");
   const [originalLogoUrl, setOriginalLogoUrl] = useState("");
   const [isSavingChanges, setIsSavingChanges] = useState(false);
-  const { nameLogo } = useOutletContext();
+  const { nameLogo, setNameLogo } = useOutletContext();
   useEffect(() => {
     if (nameLogo && nameLogo.businessName && nameLogo.logo_url) {
       setUpdatedName(nameLogo.businessName);
@@ -105,7 +105,13 @@ function Settings() {
           setOriginalName(cleanedUpdatedName);
           setOriginalLogoUrl(imageUploaded ? imageUrl : originalLogoUrl);
           setImageUploaded(false);
-          setLogoFile(null);
+            setLogoFile(null);
+            // updating states so he re-renders the screen.
+            setNameLogo({
+                ...nameLogo,
+                businessName: cleanedUpdatedName,
+                logo_url: imageUploaded ? imageUrl : originalLogoUrl
+            })
         } else {
           const errorData = await result.json();
           setError(errorData.message || "Failed to update the data.");
