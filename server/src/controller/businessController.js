@@ -17,7 +17,7 @@ const uploadToCloudinary = (buffer) => {
         if (error) reject(error);
         resove(result);
       },
-k    );
+    );
     stream.Readable.from(buffer).pipe(uploadStream);
   });
 };
@@ -133,6 +133,7 @@ const updateProfile = async (req, res, next) => {
       message: "No business profile found to update.",
     });
   } catch (error) {
+    console.log(error)
     return res.status(500).json({
       message: "Failed to update profile data in DB.",
     });
