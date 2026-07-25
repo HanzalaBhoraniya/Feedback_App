@@ -21,7 +21,9 @@ const sendOTP = async (req, res, next) => {
   console.log(randomDigits);
   const transporter = nodemailer.createTransport({
     // Hey Nodemailer, build me a delivery truck that connects to Gmail, and use my secret email and password to log in.
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
