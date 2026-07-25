@@ -1,5 +1,5 @@
 import "./FeedbackForm.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import API_URL from "../utils/api";
 
@@ -9,11 +9,14 @@ function FeedbackForm() {
   const [feedbackPrompt, setFeedbackPrompt] = useState("");
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const submissionLockedRef = useRef(false);
 
   // Data States
   const [logoUrl, setLogoUrl] = useState("");
   const [businessName, setBusinessName] = useState("");
-  const [promptMessage, setPromptMessage] = useState("")
+  const [promptMessage, setPromptMessage] = useState("");
 
   // NEW: Error and Loading Armor
   const [error, setError] = useState(null);
@@ -68,29 +71,49 @@ function FeedbackForm() {
   }
 
   async function submitFeedback() {
-    let data =
-      userName && userEmail
-        ? {
-            business_id: id,
-            starRating,
-            feedbackPrompt,
-            isAnonymous: false,
-            userName,
-            userEmail,
-          }
-        : { business_id: id, starRating, feedbackPrompt, isAnonymous: true };
+    if (
+      feedbackSubmitted ||
+      submissionLockedRef.current ||
+      isSubmittingFeedback
+    ) {
+      return;
+    }
 
-    let jsonData = JSON.stringify(data);
+    submissionLockedRef.current = true;
     setIsSubmittingFeedback(true);
+    setSubmitError("");
+
     try {
-      let result = await fetch(`${API_URL}/api/feedback/${id}`, {
+      const data =
+        userName && userEmail
+          ? {
+              business_id: id,
+              starRating,
+              feedbackPrompt,
+              isAnonymous: false,
+              userName,
+              userEmail,
+            }
+          : { business_id: id, starRating, feedbackPrompt, isAnonymous: true };
+
+      const result = await fetch(`${API_URL}/api/feedback/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: jsonData,
+        body: JSON.stringify(data),
       });
+
       if (result.ok) {
-        console.log(`Data sent successfully.`);
+        setFeedbackSubmitted(true);
+      } else {
+        setSubmitError(
+          "Unable to submit feedback right now. Please try again.",
+        );
+        submissionLockedRef.current = false;
       }
+    } catch (err) {
+      console.error("Failed to submit feedback:", err);
+      setSubmitError("Unable to submit feedback right now. Please try again.");
+      submissionLockedRef.current = false;
     } finally {
       setIsSubmittingFeedback(false);
     }
@@ -153,105 +176,126 @@ function FeedbackForm() {
   // --- Normal UI Render ---
   return (
     <div id="feedbackFormWrapper">
-      <div className="form-container">
-        {/* Hero Section */}
-        <div id="heroSection">
-          <div id="businessLogo">
-            {logoUrl && <img src={logoUrl} alt="Business Logo" />}
-          </div>
-          <h1>{businessName}</h1>
-        </div>
-
-        {/* Form Section */}
-        <div id="feedbackForm">
-          <div className="subForm" id="requiredForm">
-            <h3 id="customerFeedback">CUSTOMER FEEDBACK</h3>
-
-            <div id="experienceWrapper" className="wrapperBox">
-              <h3 id="experienceHeading" className="subHeading">
-                {promptMessage}
-              </h3>
-              <fieldset id="stars">
-                {[5, 4, 3, 2, 1].map((num) => (
-                  <React.Fragment key={num}>
-                    <input
-                      type="radio"
-                      id={`star${num}`}
-                      className="starInput"
-                      name="review[rating]"
-                      value={num}
-                      onChange={onChange}
-                      checked={starRating === num}
-                    />
-                    <label
-                      htmlFor={`star${num}`}
-                      className="starLable"
-                      title={`${num} stars`}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        className="star-svg"
-                      >
-                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                      </svg>
-                    </label>
-                  </React.Fragment>
-                ))}
-              </fieldset>
-            </div>
-
-            <div id="improveWrapper" className="wrapperBox">
-              <label className="subHeading">How Can We Improve?</label>
-              <textarea
-                id="feedbackPrompt"
-                value={feedbackPrompt}
-                placeholder="Give your suggestions or tell us more about your visit..."
-                onChange={handleTextChange}
-              ></textarea>
+      <div
+        className={`form-container ${feedbackSubmitted ? "form-container--centered" : ""}`}
+      >
+        {feedbackSubmitted ? (
+          <div className="submission-success-wrapper">
+            <div className="submission-success">
+              <div className="success-icon">✓</div>
+              <h2>Thanks for your feedback!</h2>
+              <p>
+                Your response has been received. We appreciate you helping us
+                improve.
+              </p>
             </div>
           </div>
-          <div className="subForm" id="optionalForm">
-            <h3 className="subHeading">Optional: Name and Email</h3>
-            <div className="optionalInputsWrapper">
-              <input
-                type="text"
-                value={userName}
-                id="userNameInput"
-                className="optionalInput"
-                placeholder="Full Name"
-                onChange={onChange}
-                autoComplete="off"
-              />
-              <input
-                type="email"
-                value={userEmail}
-                id="userEmailInput"
-                className="optionalInput"
-                placeholder="Email Address"
-                onChange={onChange}
-                autoComplete="off"
-              />
+        ) : (
+          <>
+            {/* Hero Section */}
+            <div id="heroSection">
+              <div id="businessLogo">
+                {logoUrl && <img src={logoUrl} alt="Business Logo" />}
+              </div>
+              <h1>{businessName}</h1>
             </div>
-          </div>
 
-          <button
-            id="submitBtn"
-            onClick={submitFeedback}
-            style={{
-              opacity: isFormValid && !isSubmittingFeedback ? 1 : 0.5,
-              cursor:
-                isFormValid && !isSubmittingFeedback
-                  ? "pointer"
-                  : "not-allowed",
-            }}
-            disabled={!isFormValid || isSubmittingFeedback}
-          >
-            {isSubmittingFeedback
-              ? "Submitting Feedback..."
-              : "SUBMIT FEEDBACK"}
-          </button>
-        </div>
+            {/* Form Section */}
+            <div id="feedbackForm">
+              <div className="subForm" id="requiredForm">
+                <h3 id="customerFeedback">CUSTOMER FEEDBACK</h3>
+
+                <div id="experienceWrapper" className="wrapperBox">
+                  <h3 id="experienceHeading" className="subHeading">
+                    {promptMessage}
+                  </h3>
+                  <fieldset id="stars">
+                    {[5, 4, 3, 2, 1].map((num) => (
+                      <React.Fragment key={num}>
+                        <input
+                          type="radio"
+                          id={`star${num}`}
+                          className="starInput"
+                          name="review[rating]"
+                          value={num}
+                          onChange={onChange}
+                          checked={starRating === num}
+                        />
+                        <label
+                          htmlFor={`star${num}`}
+                          className="starLable"
+                          title={`${num} stars`}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            className="star-svg"
+                          >
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                      </React.Fragment>
+                    ))}
+                  </fieldset>
+                </div>
+
+                <div id="improveWrapper" className="wrapperBox">
+                  <label className="subHeading">How Can We Improve?</label>
+                  <textarea
+                    id="feedbackPrompt"
+                    value={feedbackPrompt}
+                    placeholder="Give your suggestions or tell us more about your visit..."
+                    onChange={handleTextChange}
+                  ></textarea>
+                </div>
+              </div>
+              <div className="subForm" id="optionalForm">
+                <h3 className="subHeading">Optional: Name and Email</h3>
+                <div className="optionalInputsWrapper">
+                  <input
+                    type="text"
+                    value={userName}
+                    id="userNameInput"
+                    className="optionalInput"
+                    placeholder="Full Name"
+                    onChange={onChange}
+                    autoComplete="off"
+                  />
+                  <input
+                    type="email"
+                    value={userEmail}
+                    id="userEmailInput"
+                    className="optionalInput"
+                    placeholder="Email Address"
+                    onChange={onChange}
+                    autoComplete="off"
+                  />
+                </div>
+              </div>
+
+              {submitError && <p className="submit-error">{submitError}</p>}
+
+              <button
+                id="submitBtn"
+                onClick={submitFeedback}
+                style={{
+                  opacity: isFormValid && !isSubmittingFeedback ? 1 : 0.5,
+                  cursor:
+                    isFormValid && !isSubmittingFeedback
+                      ? "pointer"
+                      : "not-allowed",
+                }}
+                disabled={
+                  !isFormValid || isSubmittingFeedback || feedbackSubmitted
+                }
+              >
+                {isSubmittingFeedback
+                  ? "Submitting Feedback..."
+                  : "SUBMIT FEEDBACK"}
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

@@ -3,8 +3,9 @@
   min-height: 100vh;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 30px 15px;
+  padding: 24px 15px;
   box-sizing: border-box;
 }
 
@@ -14,6 +15,11 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.form-container--centered {
+  min-height: calc(100vh - 48px);
+  justify-content: center;
 }
 
 /* --- Hero & Logo Section --- */
@@ -167,4 +173,76 @@
   font-size: 18px;
   border-radius: 0.5rem;
   margin-top: 5px;
+}
+
+.submit-error {
+  color: #fda4af;
+  font-size: 0.95rem;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.submission-success {
+  background: linear-gradient(135deg, rgba(134, 59, 255, 0.16), rgba(24, 24, 27, 0.95));
+  border: 1px solid rgba(134, 59, 255, 0.35);
+  border-radius: 1rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  padding: 32px 24px;
+  text-align: center;
+  animation: fadeInUp 0.25s ease;
+}
+
+.submission-success-wrapper {
+  min-height: calc(100vh - 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(134, 59, 255, 0.2);
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.submission-success h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #fafafa;
+}
+
+.submission-success p {
+  margin: 0;
+  color: #d4d4d8;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  #feedbackFormWrapper {
+    padding: 16px 12px;
+  }
+
+  .form-container--centered,
+  .submission-success-wrapper {
+    min-height: calc(100vh - 32px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

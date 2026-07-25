@@ -4,39 +4,45 @@ import { findIP } from "../utils/ipAddress.js";
 
 dotenv.config();
 
-const validateFormData = (FormData) => {
-  const isRatingValid = FormData.starRating > 0 && FormData.starRating <= 5;
+const normalizeText = (value) => String(value ?? "").trim();
+
+const validateFormData = (formData) => {
+  const starRating = Number(formData?.starRating);
+  const feedbackPrompt = normalizeText(formData?.feedbackPrompt);
+  const userName = normalizeText(formData?.userName);
+  const userEmail = normalizeText(formData?.userEmail);
+
+  const isRatingValid =
+    Number.isInteger(starRating) && starRating > 0 && starRating <= 5;
   let isMessageValid = true;
-  if (FormData.feedbackPrompt.trim().length > 0) {
-    const wordsArr = FormData.feedbackPrompt.trim().split(/\s+/);
+  if (feedbackPrompt.length > 0) {
+    const wordsArr = feedbackPrompt.split(/\s+/);
     // Rule A: Kills "asdfghjklqwertyuiopzxcvbnm"
     const hasGiantWords = wordsArr.some((word) => word.length > 25);
 
     // Rule B: Kills "56723048569347856237845693675378456"
     const isOnlyNumbers =
-      /^[\d\s\W]+$/.test(FormData.feedbackPrompt) && FormData.feedbackPrompt.trim().length > 5;
+      /^[\d\s\W]+$/.test(feedbackPrompt) && feedbackPrompt.length > 5;
 
     // Rule C: Kills "fffffffffffff" or "!!!!!!!!!!!"
-    const hasSpamRepetition = /(.)\1{9,}/.test(FormData.feedbackPrompt);
+    const hasSpamRepetition = /(.)\1{9,}/.test(feedbackPrompt);
     if (hasGiantWords || isOnlyNumbers || hasSpamRepetition) {
       isMessageValid = false;
     }
   }
   // validating name.
-  const isNameValid =
-    FormData.userName.trim() === "" || /^[\p{L}\s'-]+$/u.test(FormData.userName);
+  const isNameValid = userName === "" || /^[\p{L}\s'-]+$/u.test(userName);
   // validating email.
   const isEmailValid =
-    FormData.userEmail.trim() === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(FormData.userEmail);
-  return    isRatingValid && isMessageValid && isNameValid && isEmailValid;
-  
-}
+    userEmail === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail);
+  return isRatingValid && isMessageValid && isNameValid && isEmailValid;
+};
 
 // this is that controller from where we will fetch all the data for the feedback feed.
 const getFeedbackFeed = async (req, res, next) => {
   const { range } = req.query;
   let timestamp = "";
-  console.log(range)
+  console.log(range);
   if (range && range !== "all-time") {
     timestamp = `and feedback.created_at >= now() - interval '${range.replace("-", " ")}'`;
   }
@@ -50,7 +56,7 @@ const getFeedbackFeed = async (req, res, next) => {
     );
     const feedbacks = result.rows;
     if (feedbacks.length === 0) {
-      res.status(200).json({ feedbacks: []});
+      res.status(200).json({ feedbacks: [] });
       return;
     } else {
       res.status(200).json({ feedbacks });
@@ -154,8 +160,10 @@ const getFormData = async (req, res, next) => {
 };
 // when a random user clicks submit form this gets execute and post form data in db.
 const postFormData = async (req, res, next) => {
-  let feedbackData = req.body;
-  if (!validateFormData(feedbackData)) return res.status(400).json({message: `Invalid Form Data`})
+  const feedbackData = req.body ?? {};
+  if (!feedbackData.business_id || !validateFormData(feedbackData)) {
+    return res.status(400).json({ message: `Invalid Form Data` });
+  }
   let result;
   if (feedbackData.isAnonymous) {
     result = await pool.query(

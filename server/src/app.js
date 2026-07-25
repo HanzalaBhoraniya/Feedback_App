@@ -26,7 +26,7 @@ app.use("/api/businesses", businessRouter)
 app.use("/api/feedback", feedbackRouter)
 
 app.use((err, req, res, next) => {
-    console.error("🔥 CRITICAL SERVER ERROR:", err.message);
+    console.error("🔥 CRITICAL SERVER ERROR:", err);
     
     res.status(500).json({
         status: "error",
