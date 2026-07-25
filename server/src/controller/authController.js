@@ -19,39 +19,46 @@ const sendOTP = async (req, res, next) => {
     [randomDigits, email, expires_at],
   );
   console.log(randomDigits);
-  const transporter = nodemailer.createTransport({
-    // Hey Nodemailer, build me a delivery truck that connects to Gmail, and use my secret email and password to log in.
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+  // --- BREVO HTTP API INTEGRATION ---
+  const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "api-key": process.env.BREVO_API_KEY,
+      "content-type": "application/json",
     },
-  });
-  await transporter.sendMail({
-    // Hey delivery truck, wait right here while you take this specific HTML message, label it from 'Feedback App', and drop it into the user's inbox.
-    from: `"Feedback App" <${process.env.EMAIL_USER}>`,
-    to: email,
-    subject: "Your Feedback App OTP",
-    html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
-          <h2 style="color: #111;">Login to Feedback App</h2>
-          <p>Here is your secure One-Time Password (OTP) to access your dashboard:</p>
-          <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0;">
-            <h1 style="font-size: 36px; letter-spacing: 8px; color: #6d28d9; margin: 0;">${randomDigits}</h1>
+    body: JSON.stringify({
+      sender: {
+        name: "Feedback App",
+        email: process.env.EMAIL_USER,
+      },
+      to: [{ email: email }],
+      subject: "Your Feedback App OTP",
+      htmlContent: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333; text-align: center;">
+            <img src="https://feedback-app-tan-three.vercel.app/your-logo.png" alt="Feedback App Logo" style="width: 80px; height: 80px; margin-bottom: 20px; border-radius: 10px;">
+            <h2 style="color: #111;">Login to Feedback App</h2>
+            <p style="text-align: left;">Here is your secure One-Time Password (OTP) to access your dashboard:</p>
+            <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h1 style="font-size: 36px; letter-spacing: 8px; color: #6d28d9; margin: 0;">${randomDigits}</h1>
+            </div>
+            <p style="font-size: 14px; color: #555; text-align: left;">This code will expire in exactly <strong>5 minutes</strong>. For your security, please do not share this code with anyone.</p>
+            <br>
+            <p style="text-align: left;">Best,<br><strong>The Feedback App Team</strong></p>
           </div>
-          <p style="font-size: 14px; color: #555;">This code will expire in exactly <strong>5 minutes</strong>. For your security, please do not share this code with anyone.</p>
-          <p style="font-size: 14px; color: #555;">If you did not request this code, you can safely ignore this email.</p>
-          <br>
-          <p>Best,<br><strong>The Feedback App Team</strong></p>
-        </div>
-      `,
+        `,
+    }),
   });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    console.error("Brevo API Error:", errorData);
+    return res.status(500).json({ message: "Failed to send email." });
+  }
   res.status(200).json({
     message: "success, otp has been sent on your email.",
   });
-};
+};;
 
 const verifyOTP = async (req, res, next) => {
     const { email, code } = req.body; // accessing email and code.
