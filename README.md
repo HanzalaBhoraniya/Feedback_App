@@ -67,4 +67,4 @@ This application was built to solve a real-world business problem: gathering and
    # Terminal 2 (Frontend)
    cd client
    npm run dev
-   ```f
+   ```
