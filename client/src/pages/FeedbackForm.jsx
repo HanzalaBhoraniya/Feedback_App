@@ -195,7 +195,13 @@ function FeedbackForm() {
             {/* Hero Section */}
             <div id="heroSection">
               <div id="businessLogo">
-                {logoUrl && <img src={logoUrl} alt="Business Logo" />}
+                {logoUrl && (
+                  <img
+                    src={logoUrl}
+                    alt="Business Logo"
+                    className="logo-image-fit"
+                  />
+                )}
               </div>
               <h1>{businessName}</h1>
             </div>

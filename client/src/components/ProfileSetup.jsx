@@ -218,7 +218,11 @@ function ProfileSetup() {
               >
                 <div id="logoImgWrapper">
                   {imageUrl && (
-                    <img alt="Uploaded logo preview" src={imageUrl} />
+                    <img
+                      alt="Uploaded logo preview"
+                      src={imageUrl}
+                      className="logo-image-fit"
+                    />
                   )}
                 </div>
                 <h2 id="logoInfo">

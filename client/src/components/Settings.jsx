@@ -166,7 +166,7 @@ function Settings() {
                     <img
                       src="https://via.placeholder.com/150"
                       alt="Business Logo"
-                      className="settings-logo-preview"
+                      className="settings-logo-preview logo-image-fit"
                       src={imageUrl}
                     />
                   )}

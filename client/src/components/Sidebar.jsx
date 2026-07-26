@@ -48,7 +48,11 @@ function Sidebar({ nameLogo }) {
   return (
     <aside className="sidebar">
       <div className="brand">
-        <img src={nameLogo.logo_url} alt="Logo" className="nav-logo" />
+        <img
+          src={nameLogo.logo_url}
+          alt="Logo"
+          className="nav-logo logo-image-fit"
+        />
         <h2>{nameLogo.businessName}</h2>
       </div>
       <nav className="nav-menu">

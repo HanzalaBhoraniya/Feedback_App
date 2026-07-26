@@ -56,6 +56,12 @@ button:hover {
 button:active {
   transform: scale(0.98);
 }
+.logo-image-fit {
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  flex-shrink: 0;
+}
 .main {
   display:flex;
   min-height: 100vh;
