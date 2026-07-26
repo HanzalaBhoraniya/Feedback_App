@@ -5,6 +5,12 @@
   <img src="https://github.com/user-attachments/assets/e1832ee8-8602-4894-9b63-09a204ea74f5" width="600" alt="Desktop Dashboard" />
 </p>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ccd9a906-18b5-4820-a705-5743be42ac4e" width="250" align="top" alt="Mobile Feedback Form" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/e1832ee8-8602-4894-9b63-09a204ea74f5" width="600" align="top" alt="Desktop Dashboard" />
+</p>
+
 > A full-stack, production-ready B2B platform that allows business owners to collect, analyze, and manage customer feedback in real-time.
 
 ## 🌐 Live Demo
